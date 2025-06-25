@@ -5,8 +5,7 @@
     text-align: center;
     overflow-x: hidden;
     justify-content: center;
-    align-items: center;
-    user-select: none;    
+    align-items: center;  
     scroll-behavior: smooth;
 }
 
@@ -59,6 +58,7 @@ h1{
 /* Nav item */
 .nav-item {
     position: relative;
+    padding: 0px 20px;
 }
 
 /* Nav link */
@@ -91,7 +91,7 @@ h1{
 /* Dropdown item style */
 .dropdown-item {
     color: white;
-    padding: 10px 20px;
+    padding: 5px 20px;
     display: block;
     text-decoration: none;
 }
@@ -99,6 +99,16 @@ h1{
 .dropdown-item:hover {
     background-color: #7ac8ea;
     color: black;
+}
+
+nav button{
+    margin-right: 0% !important;
+    background-color: transparent;
+    alignment-baseline: central;
+}
+
+nav button::after{
+    content: 🌚;
 }
 
 /*-------------------------HEADING-------------------------*/
@@ -204,6 +214,19 @@ body.dark-theme {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 1s ease-in-out, transform 1s ease-out;
+    width: 150px;
+}
+
+.img3 a{
+    text-decoration: none;
+}
+
+body.light-theme .img3 a{
+    color: black;
+}
+
+body.dark-theme .img3 a{
+    color: white;
 }
 
 /* Apply different delays for each img*/
@@ -307,6 +330,11 @@ body.dark-theme {
     box-shadow: 0px 4px 6px black;
 }
 
+.book a{
+    text-decoration: none;
+    color: white;
+}
+
 /*-------------------------CULTURE-------------------------*/
 .culture{
     display: flex;
@@ -350,26 +378,55 @@ body.dark-theme {
     border: 1px solid white;
 }
 
+/*-------------------------------------------------- TABLE BOOKING FORM --------------------------------------------------*/
+h1{
+    font-size: 70px;
+    color: #01014a;
+    text-shadow: 2px 4px 6px #01014a;
+    text-align: center;
+}
 
+form{
+    margin: 50px 400px;
+}
 
+legend{
+    font-size: 40px;
+}
 
-    
+table{
+    float: right;
+}
 
+table th{
+    text-align-last: left;
+    padding: 15px 0px;
+}
 
+form input,select{
+    width: 270px;
+    margin-left: 10px;
+    height: 24px;
+    border: 2px solid black;
+}
 
+form input:hover, select:hover{
+    height: 25px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+form button{
+    cursor: pointer;
+    height: 33px;
+    width: 100%;
+    margin-top: 25px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px;
+    background: #ececec;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+  
+form button:hover{
+    box-shadow: 2px 3px 5px;
+    background: transparent;
+}  
