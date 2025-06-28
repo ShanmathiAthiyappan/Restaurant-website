@@ -7,53 +7,42 @@
 
     <!-- Bootstrap CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Bootstrap JS (For Navbar Toggle) -->
+    <!-- Bootstrap JavaScript (for navbar toggling) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+
 </head>
 
-<body class="light-theme">
-  <button class="btn btn-dark mb-3" onclick="toggleTheme()">Toggle Theme</button>
+<body>
 
+    <nav class="navbar navbar-expand-lg">
+            <div class="container">
+              <a class="navbar-brand" href="#one"><img src="./icon.webp" alt="Restaurant Logo" width="60" height="60"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="#one">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#four">Trendy Recipes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#five">Menus</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#seven">Reserve table</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#six">Our Culture</a></li>
+                        <li class="nav-item">
+                          <a class="nav-link btn px-3" href="Order online.html" target="_blank">ORDER ONLINE</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+    </nav>
+        
     <div id="one">
-      <nav class="navbar navbar-expand-sm">
-        <div class="collapse navbar-collapse" id="navigation">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link navhead" href="#">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link navhead" href="#">Shop by Occasion</a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Diwali collection</a></li>
-          <li><a class="dropdown-item" href="#">Birthday flowers</a></li>
-          <li><a class="dropdown-item" href="#">Anniversary flowers</a></li>
-        </ul>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link navhead" href="#">Flower Decor</a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Corporate Events</a></li>
-          <li><a class="dropdown-item" href="#">Special events</a></li>
-        </ul>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link navhead" href="#">Shop by Collection</a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">New Collection</a></li>
-          <li><a class="dropdown-item" href="#">Flowers in a box</a></li>
-        </ul>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link navhead" href="#">Order</a>
-      </li>
-    </ul>
-    </div>
-      </nav>
-    <h1>Dive Into Delicious Meal Dishes</h1>
+        <h1>Dive Into Delicious Meal Dishes</h1>
     </div> 
 
     <div id="two">
@@ -79,32 +68,32 @@
 
     <div id="three">
             <h2>Check our Shop</h2>
-        <div class="one">
+        <div class="dish">
             <div class="img3">
                 <img src="./IMG-20250609-WA0004.jpg" alt="">
-                <p class="caption">Appetizers</p>
+                <a href="Appetizers.html" class="caption">Appetizers</a>
             </div>
             <div class="img3">
                 <img src="./IMG-20250609-WA0005.jpg" alt="">
-                <p class="caption">Bread</p>
+                <a href="Bread.html" class="caption">Bread</a>
             </div>
             <div class="img3">
                 <img src="./IMG-20250609-WA0011.jpg" alt="">
-                <p class="caption">Dessert</p>
+                <a href="Dessert.html" class="caption">Dessert</a>
             </div>
             <div class="img3">
                 <img src="./IMG-20250609-WA0018.jpg" alt="">
-                <p class="caption">Cheese pizza</p>
+                <a href="Cheesepizza.html" class="caption">Cheese pizza</a>
             </div>
             <div class="img3">
                 <img src="./IMG-20250609-WA0020.jpg" alt="">
-                <p class="caption">Soups</p>
+                <a href="Soups.html" class="caption">Soups</a>
             </div>
             </div>
-        </div>                                                                                <hr>
+    </div>                                                                                    <hr>
     
     <div id="four">
-        <h2>Tredy Recipes</h2>
+        <h2>Tredy Recipes</h2><br>
         <div class="Recipes">
             <div class="Recipe">
                 <img src="./cafe img.webp" alt="">
@@ -228,7 +217,7 @@
       </div><hr>
     </div>
 
-    <button class="book">Book Table</button>
+    <button class="book"><a href="Bookbreakfast.html">Book Table</a></button>
     </div>
   </div>
 
@@ -310,7 +299,7 @@
       </div><hr>
     </div>
 
-    <button class="book">Book Table</button>
+    <button class="book"><a href="Booklunch.html">Book Table</a></button>
     </div>
   </div>
 
@@ -392,10 +381,10 @@
       </div><hr>
     </div>
 
-    <button class="book">Book Table</button>
+    <button class="book"><a href="Bookdinner.html">Book Table</a></button>
     </div>
   </div>
-    </div>
+    </div>                                                                                    <hr>
 
     <div id="six">
       <h2>Our Culture</h2>
@@ -410,24 +399,48 @@
       </div>
     </div>                                                                                    <hr>
 
-    <div id  ="seven">
+    <div id ="seven">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio sequi iste ab voluptates 
         odit asperiores id obcaecati eius. Explicabo ut in fuga sapiente architecto voluptate mollitia 
         cupiditate exercitationem. Aspernatur?Lorem ipsum dolor sit amet consectetur adipisicing elit. 
         Nulla distinctio sequi iste ab voluptates odit asperiores id obcaecati eius. Explicabo ut in 
         fuga sapiente architecto voluptate mollitia cupiditate exercitationem. Aspernatur?</p>
 
-      <img src="./cafe img.webp" alt="" style="height: 100px; width: 100px;">
-      <img src="./cafe img.webp" alt="" style="height: 130px; width: 130px;">
-      <img src="./cafe img.webp" alt="" style="height: 150px; width: 150px;">
-      <img src="./cafe img.webp" alt="" style="height: 130px; width: 130px;">
-      <img src="./cafe img.webp" alt="" style="height: 100px; width: 100px;">
+      <img src="./cafe img.webp" alt="" class="img6">
+      <img src="./cafe img.webp" alt="" class="img7">
+      <img src="./cafe img.webp" alt="" class="img8">
+      <img src="./cafe img.webp" alt="" class="img7">
+      <img src="./cafe img.webp" alt="" class="img6">
     </div>
+
+    <div id="eight">
+      <h2>Contact Us</h2>
+    </div>
+
+    <footer> 
+
+      <div class="foot-link">
+      <li><a href="#">Linkedin</a></li>
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">Twitter</a></li>
+      <li><a href="#">Facebook</a></li>
+      </div>
+
+      <div class="foot-title">
+      <li class="nav-item"><a class="nav-link" href="#seven">About Us</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+      </div>
+
+      <div class="foot-btn btn-group">
+        <button type="button" class="btn btn1">Sign in</button>
+        <button type="button" class="btn btn2">Sign up</button>
+      </div>
+
+    </footer>
             
 
 
-    <script src="script.js"></script>
-
+    <script src="Restaurant.js"></script>
 </body>
 </html>
 
