@@ -1,4 +1,4 @@
-/**/
+/*------------------------- GLOBAL STYLE  -------------------------*/
 *{
     font-family: 'Times New Roman', Times, serif;
     margin: 0%;
@@ -7,10 +7,6 @@
     justify-content: center;
     align-items: center;  
     scroll-behavior: smooth;
-}
-
-button{
-    cursor: pointer;
 }
 
 /*-------------------------SCROLL BAR-------------------------*/
@@ -24,107 +20,96 @@ button{
 }
 
 ::-webkit-scrollbar-thumb{
-    background: linear-gradient(to bottom, #4ad2ff, #ff4aff);
+    background: linear-gradient(to bottom, #4ad2ff, #f4499e);
     border-radius: 50px;
 }
 
 ::-webkit-scrollbar-thumb:hover{
-    background: linear-gradient(to bottom, #ff00ff, #00bfff);
+    background: linear-gradient(to bottom, #f20079, #00bfff);
 }
 
-/*-------------------------TITLE-------------------------*/
-h1{
-    font-size: 70px;
-}
-
-.light-theme h1{
-    color: #01014a;
-    text-shadow: 2px 4px 6px #01014a;
-}
-
-.dark-theme h1{   
-    color: #00BFFF;
-    text-shadow: 2px 4px 6px #00BFFF;
+/*------------------------- BUTTONS & A -------------------------*/
+button,a{
+  cursor: pointer;
+  font-family: "Philosopher", sans-serif;
 }
 
 /*-------------------------NAVIGATION BAR-------------------------*/
-/* Make navbar background and position base */
 .navbar {
-    background-color: #000;
-    position: relative;
-    z-index: 1;
+  list-style: none;
+  padding: 10px 0;
+  text-align: center;
+  position: fixed;  /* Keeps it fixed while scrolling */
+  top: 0;
+  left: 0;
+  width: 100%;  /* Full width */
+  display: flex;
+  box-shadow: 0px 4px 6px pink;
+  z-index: 1000; /* Ensures it stays above other elements */
+  background-color: white;
 }
 
-/* Nav item */
-.nav-item {
-    position: relative;
-    padding: 0px 20px;
+.navbar li {
+  display: inline;
+  margin: 0 10px;
 }
 
-/* Nav link */
-.nav-link {
-    color: white !important;
-    padding: 10px 20px;
-    display: inline-block;
+.navbar li a {
+  color:black;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
 }
 
-/* Dropdown menu styling */
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: calc(100% + 10px); /* Moves it 10px below the navbar */
-    left: 0;
-    background-color: #1b1b1b;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    min-width: 220px;
-    z-index: 999;
-    padding: 10px 0;
-    border-radius: 4px;
-    overflow: visible;
+.navbar li a:hover {
+  color: #FF007F;
 }
 
-/* Show dropdown on hover */
-.nav-item:hover .dropdown-menu {
-    display: block;
+.navbar li .active{
+  text-decoration: 1px underline #f4499e ;
+  text-underline-offset: 5px;
 }
 
-/* Dropdown item style */
-.dropdown-item {
-    color: white;
-    padding: 5px 20px;
-    display: block;
-    text-decoration: none;
+.navbar .btn {
+  padding: 8px 15px;
+  background: #f4499e;
+  border: 1px solid #FF007F;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
 }
 
-.dropdown-item:hover {
-    background-color: #7ac8ea;
-    color: black;
+.navbar .btn:hover {
+  color: white;
+  background-color: #FF007F;
 }
 
-nav button{
-    margin-right: 0% !important;
-    background-color: transparent;
-    alignment-baseline: central;
+.navbar-toggler{
+    background-color: #ffddee;
 }
 
-nav button::after{
-    content: 🌚;
+.navbar-toggler:hover{
+    background-color: #ffcbe5;
 }
 
-/*-------------------------HEADING-------------------------*/
-h2{
-    margin-top: 10px;
+/*-------------------------TITLE-------------------------*/
+#one h1{
+    margin-top: 100px;
+    font-size: 70px;
+    color:  #000050;
+    text-shadow: 2px 4px 6px #191970;
+}
+
+@media screen and (max-width: 1007px){
+  #one h1{
+    font-size: 60px;
+  }
+}
+
+@media screen and (max-width: 640px){
+  #one h1{
     font-size: 50px;
-}
-
-body.light-theme {
-    background-color: white;
-    color: black;
-}
-
-body.dark-theme {
-    background-color: black;
-    color: white;
+  }
 }
 
 /*-------------------------IMAGE SLIDING-------------------------*/
@@ -154,7 +139,7 @@ body.dark-theme {
 
 #two img{  
     margin: 20px;
-    border: 2px solid #a54d2a;
+    border: 1px solid #ff0080;
     border-radius: 10px;
 }
 
@@ -178,13 +163,44 @@ body.dark-theme {
     transform: scale(1.05);
 }
 
-/*-------------------------CHECK OUR SHOUP-------------------------*/
+@media screen and (max-width: 1007px){
+  .img1{
+    height: 180px;
+    width: 180px;  
+  }
 
+  .img2{
+    height: 130px;
+    width: 130px;  
+  }
+}
+
+@media screen and (max-width: 640px){
+  .img1{
+    height: 160px;
+    width: 160px;  
+  }
+  
+  .img2{
+    height: 110px;
+    width: 110px;  
+  }
+}
+
+/*-------------------------HEADING-------------------------*/
+h2{
+    margin-top: 10px;
+    font-size: 50px;
+    color: #191970;
+    text-shadow: 2px 4px 6px #3e3e3e;
+}
+
+/*-------------------------CHECK OUR SHOUP-------------------------*/
 #three{
     padding: 50px 0px;
 }
 
-.one{
+.dish{
     margin-top: 30px;
     display: flex;
     flex-wrap: wrap;
@@ -193,7 +209,7 @@ body.dark-theme {
     max-height: fit-content;
 }
 
-.one img{
+.dish img{
     height: 90px;
     width: 90px;
     border-radius: 50%;
@@ -201,8 +217,8 @@ body.dark-theme {
     padding: 5px;
 }
 
-.one img:hover{
-    background-color: #010162;
+.dish img:hover{
+    background-color: #c30062;
     transition: transform 0.2s ease-in-out;    
     transform: scale(1.05);
 }
@@ -219,14 +235,11 @@ body.dark-theme {
 
 .img3 a{
     text-decoration: none;
-}
-
-body.light-theme .img3 a{
     color: black;
 }
 
-body.dark-theme .img3 a{
-    color: white;
+.img3 a:hover{
+  color: #FF007F;
 }
 
 /* Apply different delays for each img*/
@@ -261,9 +274,8 @@ body.dark-theme .img3 a{
   }
 
 /*-------------------------RECIPES-------------------------*/
-
 .Recipes{
-    color: #5f5f5f;
+    color: #474747;
     display: flex;
     flex-wrap: wrap;
     height: 400px;
@@ -275,6 +287,10 @@ body.dark-theme .img3 a{
     margin: 15px;
 }
 
+.Recipe .caption{
+    color: black;
+}
+
 .Recipe img{
     background-color:#dad9d94d;
     border-radius: 7px;
@@ -282,6 +298,12 @@ body.dark-theme .img3 a{
     margin-bottom: 10px;
     height: 150px;
     width: 250px;
+}
+
+.Recipe img:hover{
+    transition: transform 0.5s ease-in-out;    
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
 /*-------------------------MENU-------------------------*/
@@ -335,6 +357,12 @@ body.dark-theme .img3 a{
     color: white;
 }
 
+@media screen and (max-width: 1007px){
+.menu1{
+    float: none;
+}
+}
+
 /*-------------------------CULTURE-------------------------*/
 .culture{
     display: flex;
@@ -362,23 +390,104 @@ body.dark-theme .img3 a{
     margin-right:20px;
 }
 
+@media screen and (max-width: 1007px){
+  .culture img{
+    height: 250px;
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 640px){
+  .culture img{
+    height: 200px;
+    width: 100px; 
+  }
+
+  .img4{    
+    margin-right:5px;
+    margin-top: 80px;
+  }
+
+  .img5{    
+    margin-right:5px;
+  }
+}
+
+/*------------------------------------------------------------------------*/
 #seven{
     padding: 60px;
     display: flex;
 }
 
 #seven p{
-    width: 50%;
+    width: 60%;
     margin-right: 50px;
 }
 
 #seven img{
-    width: 60%;
+    width: 30%;
     border-radius: 10px;
     border: 1px solid white;
 }
 
-/*-------------------------------------------------- TABLE BOOKING FORM --------------------------------------------------*/
+#seven .img6{
+    height: 100px;
+    width: 100px;
+}
+
+#seven .img7{
+    height: 130px;
+    width: 130px;
+}
+
+#seven .img8{
+    height: 150px;
+    width: 150px;
+}
+
+@media screen and (max-width: 900px){
+    #seven img{
+        border-color: tomato;
+    }
+}
+
+/*-------------------------------------------------- TABLE BOOKING --------------------------------------------------*/
+.book-btn .btn{
+    width: 270px;
+    padding: 5px 0px;
+    background-color: #e6e6e6;
+}
+
+.book-btn .btn:hover{
+    background-color: darkgray;
+    border-bottom: 2px solid #c30062;
+}
+
+.book-btn .btn:onclick{
+    background-color: darkgray;
+    border-bottom: 2px solid #c30062;
+}
+
+.bookingdetails{
+    float: left;
+    border-right:1px solid  #19015f;
+}
+
+.overview{
+    display: flex;
+}
+
+.overview .details{
+    padding: 15px;
+    width: 300px;
+    text-align-last: left;
+}
+
+.overview .details h4{
+    padding-top: 15px;
+    color: #000050;
+}
+
 h1{
     font-size: 70px;
     color: #01014a;
@@ -387,11 +496,8 @@ h1{
 }
 
 form{
-    margin: 50px 400px;
-}
-
-legend{
-    font-size: 40px;
+    padding-left: 15px;
+    max-width: fit-content;
 }
 
 table{
@@ -401,6 +507,7 @@ table{
 table th{
     text-align-last: left;
     padding: 15px 0px;
+    color: #000050;
 }
 
 form input,select{
@@ -416,17 +523,68 @@ form input:hover, select:hover{
 
 form button{
     cursor: pointer;
-    height: 33px;
+    height: 35px;
     width: 100%;
     margin-top: 25px;
     border-radius: 5px;
     box-shadow: 2px 2px 4px;
-    background: #ececec;
+    background-color: #e6e6e6;
     letter-spacing: 5px;
     font-weight: bold;
 }
   
 form button:hover{
     box-shadow: 2px 3px 5px;
-    background: transparent;
+    background-color: darkgray;
 }  
+
+/*-------------------------------------------------- FOOTER --------------------------------------------------*/
+footer{    
+    background-color: #FF007F;
+    position: fixed;  /* Keeps it fixed while scrolling */
+    bottom: 0;
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+footer li{
+    list-style-type: none;
+    color: white;
+    display: inline-block;
+    padding-right: 25px;
+}
+
+footer .foot-link a{
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    border-radius: 50%;
+}
+
+footer .foot-btn{
+    border-radius: 40px;
+}
+
+footer .foot-btn .btn1{
+    color: #010182;
+    background-color: white;
+}
+
+footer .foot-btn .btn1:hover {
+    color: #0202a9;
+    background-color: #e8e8e8;
+}
+
+footer .foot-btn .btn2 {
+    color: white;
+    background-color: #010182;
+}
+
+footer .foot-btn .btn2:hover{
+    color: #e8e8e8;
+    background-color: #0202a9;
+}
+
