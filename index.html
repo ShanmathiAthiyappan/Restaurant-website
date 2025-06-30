@@ -9,10 +9,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Restaurant.css">
 
     <!-- Bootstrap JavaScript (for navbar toggling) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Add Font Awesome CDN in the <head> of your HTML -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
 
 </head>
 
@@ -400,35 +405,67 @@
     </div>                                                                                    <hr>
 
     <div id ="seven">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio sequi iste ab voluptates 
+      <h2>About Us</h2>
+
+      <div class="row aboutus">
+      <p class="col-sm-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio sequi iste ab voluptates 
         odit asperiores id obcaecati eius. Explicabo ut in fuga sapiente architecto voluptate mollitia 
         cupiditate exercitationem. Aspernatur?Lorem ipsum dolor sit amet consectetur adipisicing elit. 
         Nulla distinctio sequi iste ab voluptates odit asperiores id obcaecati eius. Explicabo ut in 
         fuga sapiente architecto voluptate mollitia cupiditate exercitationem. Aspernatur?</p>
 
-      <img src="./cafe img.webp" alt="" class="img6">
-      <img src="./cafe img.webp" alt="" class="img7">
-      <img src="./cafe img.webp" alt="" class="img8">
-      <img src="./cafe img.webp" alt="" class="img7">
-      <img src="./cafe img.webp" alt="" class="img6">
+      <div class="col-sm-5">
+      <img src="./cafe img.webp" alt="" class="img6" style="border-left: 2px solid navy; border-bottom: 2px solid navy;">
+      <img src="./cafe img.webp" alt="" class="img7" style="border-top: 2px solid navy; border-right: 2px solid navy;">
+      <img src="./cafe img.webp" alt="" class="img8" style="border-top: 2px solid navy; border-right: 2px solid navy;">
+      <img src="./cafe img.webp" alt="" class="img7" style="border-right: 2px solid navy; border-bottom: 2px solid navy;">
+      <img src="./cafe img.webp" alt="" class="img6" style="border-left: 2px solid navy; border-bottom: 2px solid navy;">
+      </div>
+      </div>
+
     </div>
 
     <div id="eight">
       <h2>Contact Us</h2>
+
+      <table>
+        <tr>
+          <th>Phone</th>
+          <td><a href="tel:+9078654321">9078654321</a></td>
+        </tr>
+
+        <tr>
+          <th>Mail</th>
+          <td><a href="https://mail.google.com/mail/?view=cm&fs=1&to=akshanmathi@gmail.com&su=Inquiry&body=Hello,
+        %20I%20need%20more%20information." target="_blank"> abc@gmail.com </a></td>
+        </tr>
+
+        <tr>
+          <th>Location</th>
+          <td>97/1, West street, Hitech city, Hyderabad - 500081</td>
+        </tr>
+      </table>
+
     </div>
 
-    <footer> 
+    <footer class="footer"> 
 
       <div class="foot-link">
-      <li><a href="#">Linkedin</a></li>
-      <li><a href="#">Instagram</a></li>
-      <li><a href="#">Twitter</a></li>
-      <li><a href="#">Facebook</a></li>
+      <li><a href="https://www.linkedin.com/in/shanmathi-a-209379282/" target="_blank">
+                    <span><i class="fab fa-linkedin"></i></li>
+      <li><a href="https://www.linkedin.com/in/shanmathi-a-209379282/" target="_blank">
+                    <span><i class="fab fa-linkedin"></i></li>
+      <li><a href="https://www.linkedin.com/in/shanmathi-a-209379282/" target="_blank">
+                    <span><i class="fab fa-linkedin"></i></li>
+      <li><a href="https://www.linkedin.com/in/shanmathi-a-209379282/" target="_blank">
+                    <span><i class="fab fa-linkedin"></i></li>
+      <li><a href="https://www.linkedin.com/in/shanmathi-a-209379282/" target="_blank">
+                    <span><i class="fab fa-linkedin"></i></li>
       </div>
 
       <div class="foot-title">
       <li class="nav-item"><a class="nav-link" href="#seven">About Us</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+      <li class="nav-item"><a class="nav-link" href="#eight">Contact Us</a></li>
       </div>
 
       <div class="foot-btn btn-group">
@@ -441,6 +478,14 @@
 
 
     <script src="Restaurant.js"></script>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
 </body>
 </html>
 
