@@ -413,42 +413,38 @@ h2{
   }
 }
 
-/*------------------------------------------------------------------------*/
-#seven{
-    padding: 60px;
-    display: flex;
+/*-------------------------------------------------- ABOUT US --------------------------------------------------*/
+.aboutus{
+    padding: 20px 0px;
 }
 
-#seven p{
-    width: 60%;
-    margin-right: 50px;
+.aboutus p{
+    margin-right: 5px;
 }
 
-#seven img{
-    width: 30%;
+.aboutus img{
     border-radius: 10px;
-    border: 1px solid white;
+    padding: 2px;
 }
 
-#seven .img6{
+.aboutus .img6{
     height: 100px;
     width: 100px;
 }
 
-#seven .img7{
+.aboutus .img7{
     height: 130px;
     width: 130px;
 }
 
-#seven .img8{
+.aboutus .img8{
     height: 150px;
     width: 150px;
 }
 
-@media screen and (max-width: 900px){
-    #seven img{
-        border-color: tomato;
-    }
+/*-------------------------------------------------- CONTACT US --------------------------------------------------*/
+#eight form{
+    text-decoration-style: none;
 }
 
 /*-------------------------------------------------- TABLE BOOKING --------------------------------------------------*/
@@ -495,37 +491,38 @@ h1{
     text-align: center;
 }
 
-form{
+.bookform{
     padding-left: 15px;
     max-width: fit-content;
 }
 
-table{
+.bookform table{
     float: right;
 }
 
-table th{
+.bookform table th{
     text-align-last: left;
     padding: 15px 0px;
     color: #000050;
 }
 
-form input,select{
+.bookform input,select{
     width: 270px;
     margin-left: 10px;
     height: 24px;
     border: 2px solid black;
 }
 
-form input:hover, select:hover{
+.bookform input:hover, select:hover{
     height: 25px;
 }
 
-form button{
+.bookform button{
     cursor: pointer;
     height: 35px;
-    width: 100%;
+    width: 80%;
     margin-top: 25px;
+    margin-left: 20%;
     border-radius: 5px;
     box-shadow: 2px 2px 4px;
     background-color: #e6e6e6;
@@ -533,7 +530,7 @@ form button{
     font-weight: bold;
 }
   
-form button:hover{
+.bookform button:hover{
     box-shadow: 2px 3px 5px;
     background-color: darkgray;
 }  
@@ -547,7 +544,7 @@ footer{
     padding: 10px;
     width: 100%;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 
 footer li{
@@ -562,6 +559,10 @@ footer .foot-link a{
     color: black;
     background-color: white;
     border-radius: 50%;
+}
+
+footer .foot-title{
+    padding-top: 8px;
 }
 
 footer .foot-btn{
