@@ -3,47 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant</title>
-
-    <!-- Bootstrap CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Restaurant Website</title>
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Bootstrap JavaScript (for navbar toggling) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="index.css">
 
     <!-- Add Font Awesome CDN in the <head> of your HTML -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Bootstrap JavaScript (for navbar toggling) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </head>
 
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
 
-    <nav class="navbar navbar-expand-lg">
-            <div class="container">
-              <a class="navbar-brand" href="#one"><img src="./icon.webp" alt="Restaurant Logo" width="60" height="60"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link active" href="#one">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#four">Trendy Recipes</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#five">Menus</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#seven">Reserve table</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#six">Our Culture</a></li>
-                        <li class="nav-item">
-                          <a class="nav-link btn px-3" href="Order online.html" target="_blank">ORDER ONLINE</a>
-                        </li>
-                    </ul>
-                </div>
+    <nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#one">
+      <img src="./Resurantlogo.jpg" alt="Restaurant Logo" width="60" height="60">
+    </a>
 
-            </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="#one">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#four">Organic Recipes</a></li>
+        <li class="nav-item"><a class="nav-link" href="#five">Menus</a></li>
+
+        <!-- Dropdown starts -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-bs-toggle="dropdown">
+          Reserve table
+        </a>
+      <div class="dropdown-menu shadow">
+        <a class="dropdown-item" href="./Bookbreakfast.html" target="_blank">Book Morning Table</a>
+        <a class="dropdown-item" href="./Booklunch.html" target="_blank">Book Noon Table</a>
+        <a class="dropdown-item" href="./Bookdinner.html" target="_blank">Book Dinner Table</a>
+      </div>
+      </li>
+        <!-- Dropdown ends -->
+
+        <li class="nav-item"><a class="nav-link" href="#six">Our Culture</a></li>
+        <li class="nav-item"><a class="nav-link btn px-3" href="Order online.html" target="_blank">ORDER ONLINE</a></li>
+      </ul>
+    </div>
+  </div>
     </nav>
         
     <div id="one">
@@ -52,22 +63,21 @@
 
     <div id="two">
       <div class="sliding">
-        <img src="./cafe img.webp" alt="" class="img1">
-        <img src="./cafe img.webp" alt="" class="img2">
-        <img src="./cafe img.webp" alt="" class="img1">
-        <img src="./cafe img.webp" alt="" class="img2">
-        <img src="./cafe img.webp" alt="" class="img1">
-        <img src="./cafe img.webp" alt="" class="img2">
-        <img src="./cafe img.webp" alt="" class="img1">
-        <img src="./cafe img.webp" alt="" class="img2">
-        <img src="./cafe img.webp" alt="" class="img1">
-        <img src="./cafe img.webp" alt="" class="img2">
-        <img src="./cafe img.webp" alt="" class="img1">
-        <img src="./cafe img.webp" alt="" class="img2">
-        <img src="./cafe img.webp" alt="" class="img1">
-        <img src="./cafe img.webp" alt="" class="img2">
-        <img src="./cafe img.webp" alt="" class="img1">
-        <img src="./cafe img.webp" alt="" class="img2">
+        <img src="./intro1.jpg" alt="" class="img1">
+        <img src="./intro2.avif" alt="" class="img2">
+        <img src="./intro3.jpg" alt="" class="img1">
+        <img src="./intro4.jpg" alt="" class="img2">
+        <img src="./intro5.jpg" alt="" class="img1">
+        <img src="./intro6.jpg" alt="" class="img2">
+        <img src="./intro7.webp" alt="" class="img1">
+        <img src="./intro8.jpg" alt="" class="img2">
+        <img src="./intro9.jpg" alt="" class="img1">
+        <img src="./intro10.jpg" alt="" class="img2">
+        <img src="./intro11.avif" alt="" class="img1">
+        <img src="./intro12.jpg" alt="" class="img2">
+        <img src="./intro13.jpg" alt="" class="img1">
+        <img src="./intro14.avif" alt="" class="img2">
+        <img src="./intro15.jpg" alt="" class="img1">
       </div>
     </div>                                                                                    <hr>
 
@@ -75,70 +85,101 @@
             <h2>Check our Shop</h2>
         <div class="dish">
             <div class="img3">
-                <img src="./IMG-20250609-WA0004.jpg" alt="">
-                <a href="Appetizers.html" class="caption">Appetizers</a>
+                <img src="./Appetizers.jpg" alt="">
+                <a href="" class="caption">Appetizers</a>
             </div>
             <div class="img3">
-                <img src="./IMG-20250609-WA0005.jpg" alt="">
-                <a href="Bread.html" class="caption">Bread</a>
+                <img src="./Drinks.jpg" alt="">
+                <a href="" class="caption">Drinks</a>
             </div>
             <div class="img3">
-                <img src="./IMG-20250609-WA0011.jpg" alt="">
-                <a href="Dessert.html" class="caption">Dessert</a>
+                <img src="./Dessert.jpg" alt="">
+                <a href="" class="caption">Dessert</a>
             </div>
             <div class="img3">
-                <img src="./IMG-20250609-WA0018.jpg" alt="">
-                <a href="Cheesepizza.html" class="caption">Cheese pizza</a>
+                <img src="./Street Food.jpg" alt="">
+                <a href="" class="caption">Street food</a>
             </div>
             <div class="img3">
-                <img src="./IMG-20250609-WA0020.jpg" alt="">
-                <a href="Soups.html" class="caption">Soups</a>
+                <img src="./Fusion Bites.webp" alt="">
+                <a href="" class="caption">Fusion Bites</a>
             </div>
             </div>
     </div>                                                                                    <hr>
     
     <div id="four">
-        <h2>Tredy Recipes</h2><br>
+        <h2>Organic Recipes</h2><br>
         <div class="Recipes">
             <div class="Recipe">
-                <img src="./cafe img.webp" alt="">
-                <p class="caption"><b>Recipe</b></p>
-                <p><b>Ingredients:</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, fugiat?</p>
+                <img src="./Appetizers.jpg" alt="">
+                <p class="caption"><b>Moong Dal Khichdi</b></p>
+                <p style="color: black;"><b>Ingredients:</b>
+                    <li>Moong dal</li>
+                    <li>Rice</li>
+                    <li>Ginger</li>
+                    <li>Ghee</li>
+                    <li>Turmeric</li></p>
             </div>
             <div class="Recipe">
-                <img src="./cafe img.webp" alt="">
-                <p class="caption"><b>Recipe</b></p>
-                <p><b>Ingredients:</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, fugiat?</p>
+                <img src="./Dessert.jpg" alt="">
+                <p class="caption"><b>Methi Thepla</b></p>
+                <p style="color: black;"><b>Ingredients:</b>
+                    <li>Fresh methi (fenugreek leaves)</li>
+                    <li>Whole wheat flour</li>
+                    <li>Curd</li>
+                    <li>Carom seeds (ajwain)</li></p>
             </div>
             <div class="Recipe">
-                <img src="./cafe img.webp" alt="">
-                <p class="caption"><b>Recipe</b></p>
-                <p><b>Ingredients:</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, fugiat?</p>
+                <img src="./Drinks.jpg" alt="">
+                <p class="caption"><b>Cucumber Raita</b></p>
+                <p style="color: black;"><b>Ingredients:</b>
+                  <li>Cucumber</li>
+                  <li>Organic curd</li>
+                  <li>Roasted cumin powder</li></p>
             </div>
             <div class="Recipe">
-                <img src="./cafe img.webp" alt="">
-                <p class="caption"><b>Recipe</b></p>
-                <p><b>Ingredients:</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, fugiat?</p>
+                <img src="./Fusion Bites.webp" alt="">
+                <p class="caption"><b>Vegetable Coconut Stew</b></p>
+                <p style="color: black;"><b>Ingredients:</b>
+                  <li>Coconut milk</li>
+                  <li>Carrot, beans, potatoes</li>
+                  <li>Curry leaves</li>
+                  <li>Coconut oil</li></p>
             </div>
             <div class="Recipe">
-                <img src="./cafe img.webp" alt="">
-                <p class="caption"><b>Recipe</b></p>
-                <p><b>Ingredients:</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, fugiat?</p>
+                <img src="./intro1.jpg" alt="">
+                <p class="caption"><b>Garlic Sauteed Greens</b></p>
+                <p style="color: black;"><b>Ingredients:</b>
+                  <li>Fresh spinach/amaranth</li>
+                  <li>Garlic</li>
+                  <li>Sesame oil</li></p>
             </div>
             <div class="Recipe">
-                <img src="./cafe img.webp" alt="">
-                <p class="caption"><b>Recipe</b></p>
-                <p><b>Ingredients:</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, fugiat?</p>
+                <img src="./intro10.jpg" alt="">
+                <p class="caption"><b>Tomato Rasam</b></p>
+                <p style="color: black;"><b>Ingredients:</b>
+                  <li>Tomatoes</li>
+                  <li>Tamarind</li>
+                  <li>Black pepper</li>
+                  <li>Garlic</li>
+                  <li>Curry leaves</li></p>
             </div>
             <div class="Recipe">
-                <img src="./cafe img.webp" alt="">
-                <p class="caption"><b>Recipe</b></p>
-                <p><b>Ingredients:</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, fugiat?</p>
+                <img src="./intro11.avif" alt="">
+                <p class="caption"><b>Tulsi Ginger Herbal Tea</b></p>
+                <p style="color: black;"><b>Ingredients:</b>
+                  <li>Tulsi leaves</li>
+                  <li>Fresh ginger</li>
+                  <li>Palm jaggery or honey</li></p>
             </div>
             <div class="Recipe">
-                <img src="./cafe img.webp" alt="">
-                <p class="caption"><b>Recipe</b></p>
-                <p><b>Ingredients:</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, fugiat?</p>
+                <img src="./intro12.jpg" alt="">
+                <p class="caption"><b>Ragi Dosa</b></p>
+                <p style="color: black;"><b>Ingredients:</b>
+                  <li>Ragi flour</li>
+                  <li>Rice flour</li>
+                  <li>Curd</li>
+                  <li>Cumin seeds</li></p>
             </div>
         </div>
     </div>                                                                                    <hr>
@@ -150,76 +191,67 @@
     <div class="menu1">
       <!-- Repeat this column for each item -->
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$58</div>
-      </div><hr>
+        <img src="./Idli with Sambar & Chutney.png" alt="food">
+        <div class="food-title">Idli with Sambar & Chutney</div>
+        <div class="food-price">₹60</div>
+      </div>
 
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$78</div>
-      </div><hr>
+        <img src="./Masala Dosa.png" alt="food">
+        <div class="food-title">Masala Dosa</div>
+        <div class="food-price">₹90</div>
+      </div>
+      
 
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$54</div>
-      </div><hr>
+        <img src="./Pongal with Coconut Chutney.png" alt="food">
+        <div class="food-title">Pongal with Coconut Chutney</div>
+        <div class="food-price">₹70</div>
+      </div>
 
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$120</div>
-      </div><hr>
+        <img src="./Poori with Potato Masala.jpg" alt="food">
+        <div class="food-title">Poori with Potato Masala</div>
+        <div class="food-price">₹85</div>
+      </div>
 
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$42</div>
-      </div><hr>
+        <img src="./Aloo Paratha with Curd & Pickle.jpg" alt="food">
+        <div class="food-title">Aloo Paratha with Curd & Pickle</div>
+        <div class="food-price">₹100</div>
+      </div>
     </div>
 
     <div class="menu2">
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$82</div>
-      </div><hr>
+        <img src="./Upma with Coconut Chutney.jpg" alt="food">
+        <div class="food-title">Upma with Coconut Chutney</div>
+        <div class="food-price">₹60</div>
+      </div>
 
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$69</div>
-      </div><hr>
+        <img src="./Bread Omelette.jpg" alt="food">
+        <div class="food-title">Bread Omelette</div>
+        <div class="food-price">₹80</div>
+      </div>
 
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$64</div>
-      </div><hr>
+        <img src="./Medu Vada with Sambar.jpg" alt="food">
+        <div class="food-title">Medu Vada with Sambar</div>
+        <div class="food-price">₹70</div>
+      </div>
 
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$99</div>
-      </div><hr>
+        <img src="./Chole Bhature.jpg" alt="food">
+        <div class="food-title">Chole Bhature</div>
+        <div class="food-price">₹110</div>
+      </div>
 
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$60</div>
-      </div><hr>
+        <img src="./Vegetable Sandwich with Tea.jpg" alt="food">
+        <div class="food-title">Vegetable Sandwich with Tea</div>
+        <div class="food-price">₹95</div>
+      </div>
     </div>
 
     <button class="book"><a href="Bookbreakfast.html">Book Table</a></button>
@@ -232,76 +264,66 @@
     <div class="menu1">
       <!-- Repeat this column for each item -->
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$58</div>
-      </div><hr>
+        <img src="./South Indian Thali.jpg" alt="food">
+        <div class="food-title">South Indian Thali</div>
+        <div class="food-price">₹140</div>
+      </div>
 
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$78</div>
-      </div><hr>
+        <img src="./North Indian Thali.jpg" alt="food">
+        <div class="food-title">North Indian Thali</div>
+        <div class="food-price">₹170</div>
+      </div>
 
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$54</div>
-      </div><hr>
+        <img src="./Veg Biryani with Raita.jpg" alt="food">
+        <div class="food-title">Veg Biryani with Raita</div>
+        <div class="food-price">₹130</div>
+      </div>
 
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$120</div>
-      </div><hr>
+        <img src="./Paneer Butter Masala with Naan.jpg" alt="food">
+        <div class="food-title">Paneer Butter Masala with Naan</div>
+        <div class="food-price">₹180</div>
+      </div>
 
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$42</div>
-      </div><hr>
+        <img src="./Chicken Curry with Steamed Rice.jpg" alt="food">
+        <div class="food-title">Chicken Curry with Steamed Rice</div>
+        <div class="food-price">₹190</div>
+      </div>
     </div>
 
     <div class="menu2">
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$82</div>
-      </div><hr>
+        <img src="./Rajma Chawal.jpg" alt="food">
+        <div class="food-title">Rajma Chawal</div>
+        <div class="food-price">₹110</div>
+      </div>
 
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$69</div>
-      </div><hr>
+        <img src="./Dal Tadka with Jeera Rice.jpg" alt="food">
+        <div class="food-title">Dal Tadka with Jeera Rice</div>
+        <div class="food-price">₹120</div>
+      </div>
 
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$64</div>
-      </div><hr>
+        <img src="./Fish Fry with Lemon Rice.jpg" alt="food">
+        <div class="food-title">Fish Fry with Lemon Rice</div>
+        <div class="food-price">₹210</div>
+      </div>
 
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$99</div>
-      </div><hr>
+        <img src="./Gobi Manchurian with Fried Rice.jpg" alt="food">
+        <div class="food-title">Gobi Manchurian with Fried Rice</div>
+        <div class="food-price">₹140</div>
+      </div>
 
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$60</div>
-      </div><hr>
+        <img src="./Veg Pulao with Boondi Raita.jpg" alt="food">
+        <div class="food-title">Veg Pulao with Boondi Raita</div>
+        <div class="food-price">₹125</div>
+      </div>
     </div>
 
     <button class="book"><a href="Booklunch.html">Book Table</a></button>
@@ -312,78 +334,67 @@
     <div id="dinner">
         <h2 class="menuhead">Dinner Special Menu</h2>
     <div class="menu1">
-      <!-- Repeat this column for each item -->
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$58</div>
-      </div><hr>
+        <img src="./Butter Naan with Kadai Paneer.jpg" alt="food">
+        <div class="food-title">Butter Naan with Kadai Paneer</div>
+        <div class="food-price">₹170</div>
+      </div>
 
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$78</div>
-      </div><hr>
+        <img src="./Chicken Tikka Masala with Roti.jpg" alt="food">
+        <div class="food-title">Chicken Tikka Masala with Roti</div>
+        <div class="food-price">₹200</div>
+      </div>
 
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$54</div>
-      </div><hr>
+        <img src="./Egg Curry with Lachha Paratha.jpg" alt="food">
+        <div class="food-title">Egg Curry with Lachha Paratha</div>
+        <div class="food-price">₹160</div>
+      </div>
 
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$120</div>
-      </div><hr>
+        <img src="./Veg Kurma with Appam.jpg" alt="food">
+        <div class="food-title"> Veg Kurma with Appam</div>
+        <div class="food-price">₹130</div>
+      </div>
 
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$42</div>
-      </div><hr>
+        <img src="./Palak Paneer with Garlic Naan.jpg" alt="food">
+        <div class="food-title">Palak Paneer with Garlic Naan</div>
+        <div class="food-price">₹170</div>
+      </div>
     </div>
 
     <div class="menu2">
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$82</div>
-      </div><hr>
+        <img src="./Mutton Rogan Josh with Rice.jpg" alt="food">
+        <div class="food-title">Mutton Rogan Josh with Rice</div>
+        <div class="food-price">₹240</div>
+      </div>
 
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$69</div>
-      </div><hr>
+        <img src="./lemon rice with curd.jpg" alt="food">
+        <div class="food-title">Lemon Rice with Curd</div>
+        <div class="food-price">₹100</div>
+      </div>
 
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$64</div>
-      </div><hr>
+        <img src="./Tandoori Roti with Chana Masala (2).jpg" alt="food">
+        <div class="food-title">Tandoori Roti with Chana Masala</div>
+        <div class="food-price">₹120</div>
+      </div>
 
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$99</div>
-      </div><hr>
+        <img src="./Pesarattu with Coconut Chutney.jpg" alt="food">
+        <div class="food-title">Pesarattu with Coconut Chutney</div>
+        <div class="food-price">₹80</div>
+      </div>
 
       <div class="col food-card">
-        <img src="./cafe img.webp" alt="food">
-        <div class="food-title">Crispy Chicken Poblano</div>
-        <div class="food-subtitle">Beef, chicken, turkey.</div>
-        <div class="food-price">$60</div>
-      </div><hr>
+        <img src="./Chicken Fried Rice with Gravy.jpg" alt="food">
+        <div class="food-title">Chicken Fried Rice with Gravy</div>
+        <div class="food-price">₹150</div>
+      </div>
     </div>
 
     <button class="book"><a href="Bookdinner.html">Book Table</a></button>
@@ -392,17 +403,88 @@
     </div>                                                                                    <hr>
 
     <div id="six">
-      <h2>Our Culture</h2>
+  <h2>Our Culture</h2>
 
-      <div class="culture">
-      <img src="./bgimg5.webp" alt="" class="img4">
-      <img src="./bgimg4.webp" alt="" class="img5">
-      <img src="./bgimg5.webp" alt="" class="img4">
-      <img src="./bgimg4.webp" alt="" class="img5">
-      <img src="./bgimg5.webp" alt="" class="img4">
-      <img src="./bgimg4.webp" alt="" class="img5">
+  <div class="culture">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="./our culture-1.jpg" alt="">
+        </div>
+        <div class="flip-card-back">
+          <div class="card-text">
+          <p>We celebrate unity through food and tradition.</p>
+          </div>
+        </div>
       </div>
-    </div>                                                                                    <hr>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="./our culture-2.png" alt="">
+        </div>
+        <div class="flip-card-back">
+          <div class="card-text">
+          <p>Our team values collaboration and joy in cooking.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="./our culture-3.jpg" alt="">
+        </div>
+        <div class="flip-card-back">
+          <div class="card-text">
+          <p>We mix tradition with modern flavors daily.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="./our culture-4.jpg" alt="">
+        </div>
+        <div class="flip-card-back">
+          <div class="card-text">
+          <p>Happy moments shared over meals unite us.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="./our culture-5.jpg" alt="">
+        </div>
+        <div class="flip-card-back">
+          <div class="card-text">
+          <p>Festive flavors and stories are part of us.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="./our culture-6.jpg" alt="">
+        </div>
+        <div class="flip-card-back">
+          <div class="card-text">
+          <p>From our kitchen to your heart – with love!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>                                                                                        <hr>
 
     <div id ="seven">
       <h2>About Us</h2>
@@ -415,52 +497,94 @@
         fuga sapiente architecto voluptate mollitia cupiditate exercitationem. Aspernatur?</p>
 
       <div class="col-sm-5">
-      <img src="./cafe img.webp" alt="" class="img6" style="border-left: 2px solid navy; border-bottom: 2px solid navy;">
-      <img src="./cafe img.webp" alt="" class="img7" style="border-top: 2px solid navy; border-right: 2px solid navy;">
-      <img src="./cafe img.webp" alt="" class="img8" style="border-top: 2px solid navy; border-right: 2px solid navy;">
-      <img src="./cafe img.webp" alt="" class="img7" style="border-right: 2px solid navy; border-bottom: 2px solid navy;">
-      <img src="./cafe img.webp" alt="" class="img6" style="border-left: 2px solid navy; border-bottom: 2px solid navy;">
+      <img src="./Aboutus- 1.webp" alt="" class="img6" style="border-left: 2px solid navy; border-bottom: 2px solid navy;">
+      <img src="./Aboutus- 2.avif" alt="" class="img7" style="border-top: 2px solid navy; border-right: 2px solid navy;">
+      <img src="./Aboutus- 3.jpeg" alt="" class="img8" style="border-top: 2px solid navy; border-right: 2px solid navy;">
+      <img src="./Aboutus- 4.avif" alt="" class="img7" style="border-right: 2px solid navy; border-bottom: 2px solid navy;">
+      <img src="./Aboutus- 5.jpg" alt="" class="img6" style="border-left: 2px solid navy; border-bottom: 2px solid navy;">
       </div>
       </div>
 
-    </div>
+    </div>                                                                                    <hr>
 
     <div id="eight">
-      <h2>Contact Us</h2>
+      <section class="contact-section">
+    <div class="container">
+      <h2 class="contact-title">Contact Us</h2>
+      <div class="row g-4">
 
-      <table>
-        <tr>
-          <th>Phone</th>
-          <td><a href="tel:+9078654321">9078654321</a></td>
-        </tr>
+        <!-- Contact Form -->
+        <div class="col-md-6">
+          <form id="contactForm">
+            <div class="mb-3">
+              <label for="name" class="form-label">Your Name</label>
+              <input type="text" class="form-control" id="name" required />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="email" required />
+            </div>
+            <div class="mb-3">
+              <label for="subject" class="form-label">Subject</label>
+              <input type="text" class="form-control" id="subject" />
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+          </form>
+        </div>
 
-        <tr>
-          <th>Mail</th>
-          <td><a href="https://mail.google.com/mail/?view=cm&fs=1&to=akshanmathi@gmail.com&su=Inquiry&body=Hello,
-        %20I%20need%20more%20information." target="_blank"> abc@gmail.com </a></td>
-        </tr>
+        <!-- Contact Info -->
+        <div class="col-md-6">
+          <div class="contact-info">
+            <h4>Our Address</h4>
+            <p>123 Foodie Street,<br>Namakkal, Tamil Nadu, India</p>
 
-        <tr>
-          <th>Location</th>
-          <td>97/1, West street, Hitech city, Hyderabad - 500081</td>
-        </tr>
-      </table>
+            <h4>Phone</h4>
+            <p>+91 98765 43210</p>
 
+            <h4>Email</h4>
+            <p>contact@yourrestaurant.com</p>
+
+            <h4>Opening Hours</h4>
+            <p>Mon - Sun: 7 AM – 10 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Google Map -->
+      <div class="row mt-5">
+        <div class="col-12">
+          <div class="map-container">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1821607871636!2d78.1024701142876!3d11.218145352942736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babd9878e5f8a63%3A0x29e1142a71c0bb5f!2sNamakkal!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+              width="100%" 
+              height="300" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
+    </div>                                                                                    <hr>
 
     <footer class="footer"> 
 
       <div class="foot-link">
-      <li><a href="https://www.linkedin.com/in/shanmathi-a-209379282/" target="_blank">
-                    <span><i class="fab fa-linkedin"></i></li>
-      <li><a href="https://www.linkedin.com/in/shanmathi-a-209379282/" target="_blank">
-                    <span><i class="fab fa-linkedin"></i></li>
-      <li><a href="https://www.linkedin.com/in/shanmathi-a-209379282/" target="_blank">
-                    <span><i class="fab fa-linkedin"></i></li>
-      <li><a href="https://www.linkedin.com/in/shanmathi-a-209379282/" target="_blank">
-                    <span><i class="fab fa-linkedin"></i></li>
-      <li><a href="https://www.linkedin.com/in/shanmathi-a-209379282/" target="_blank">
-                    <span><i class="fab fa-linkedin"></i></li>
+      <li><a href="#" target="_blank">
+                    <span><i class=""></i>1</li>
+      <li><a href="#" target="_blank">
+                    <span><i class=""></i>1</li>
+      <li><a href="#" target="_blank">
+                    <span><i class=""></i>1</li>
+      <li><a href="#" target="_blank">
+                    <span><i class=""></i>1</li>
       </div>
 
       <div class="foot-title">
@@ -473,18 +597,9 @@
         <button type="button" class="btn btn2">Sign up</button>
       </div>
 
-    </footer>
-            
-
+    </footer>                                                                                 <hr>
 
     <script src="script.js"></script>
-
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 
 </body>
 </html>
