@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book lunch Table</title>
+    <title>Book Dinner Table</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
-<body style="overflow-y: hidden;
-             height: 100vh;
-             margin: auto 150px;">
+<body>
+
+    <div class="tablebooking">
 
     <h2>Book your table for Dinner</h2>
     
@@ -24,7 +24,7 @@
     <div class="overview">
       <div class="details">
       <h4>Phone Number</h4>
-      <p>9078654321</p>
+      <p>+91 9638527410</p>
       
       <h4>Cuisines</h4>
       <p>Biryani, North Indian, Chinese</p>
@@ -33,24 +33,32 @@
       <p>$800 for two people(approx.)</p>
       
       <h4>Famous for</h4>
-      <p>Rooftop Ambiance, Mutton Biryani,Chicken Biryani, Hyderbadi Dum Biryani, Vegetable Biryani, Non Veg Biryani, Hydrabadi Biryani, Haleem </p>
+      <p>Rooftop Ambiance, Mutton <br>Biryani,Chicken Biryani, <br>Hyderbadi Dum Biryani, <br>Vegetable Biryani, Non Veg <br>Biryani, Hydrabadi Biryani, <br>Haleem </p>
       </div>
 
       <div class="details">
       <h4>Openings hours</h4>
-      <p>10:30am - 11pm</p>
+      <p>Mon- Sat: 7am - 10pm <br> Sat - Sun: 8am - 9pm</p>
       
       <h4>Address</h4>
-      <p>97/1, West street, Hitech city, Hyderabad - 500081</p><br>
+      <p>Hussain Sagar, Khairtabad, <br>Hydrabad, Telangana. 500003</p><br>
       
-      <img src="./bgimg4.webp" alt="map location" height="150px" width="250px">
+        <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1821607871636!2d78.1024701142876!3d11.218145352942736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babd9878e5f8a63%3A0x29e1142a71c0bb5f!2sNamakkal!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+              width="100%" 
+              height="275" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
       </div>
 
     </div>
 
     <form class="bookform">
-        
+
             <table>
             <tr>
             <th><label for="fname">Name:</label></th>
@@ -92,6 +100,8 @@
             <button>BOOK</button>
         
     </form>
+</div>
+
 </div>
 
 </body>
