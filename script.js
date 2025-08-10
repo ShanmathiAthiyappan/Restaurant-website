@@ -34,3 +34,43 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
       alert("Thank you! Your message has been sent successfully.");
       this.reset();
     });
+
+/*------------------------------------------------- TAMBLE BOOKING FORM -----------------------------------------------*/
+document.addEventListener("DOMContentLoaded", function () {
+  const menuBtn = document.querySelector(".btn4");
+  const overviewBtn = document.querySelector(".btn3");
+  const overview = document.querySelector(".overview");
+  const menu = document.querySelector(".menu-list");
+
+  // Show menu when clicking Menu
+  menuBtn.addEventListener("click", () => {
+    overview.style.display = "none";
+    menu.style.display = "block";
+  });
+
+  // Show overview when clicking Overview
+  overviewBtn.addEventListener("click", () => {
+    menu.style.display = "none";
+    overview.style.display = "flex";
+  });
+
+  const form = document.querySelector(".bookform");
+  const popup = document.getElementById("popup");
+  const okBtn = document.getElementById("okBtn");
+  const popupMessage = document.getElementById("popupMessage");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent form submission
+
+    const name = document.getElementById("fname").value.trim();
+    const guests = document.getElementById("number").value.trim();
+
+    popupMessage.innerHTML = `Hi <strong>${name || "Guest"}</strong>, your table for <strong>${guests || "0"}</strong> guest(s) has been booked successfully!`;
+    popup.style.display = "flex"; // Show popup
+  });
+
+  okBtn.addEventListener("click", function () {
+    popup.style.display = "none"; // Hide popup
+    form.reset(); // Clear the form after booking
+  });
+});
