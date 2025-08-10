@@ -1,188 +1,449 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Order Online</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Online Order Form</title>
   <style>
-    legend{
-      font-family: 'Times New Roman', Times, serif;
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1{
+      color:  #bf0060;
+      text-shadow: 2px 4px 6px lightgray;
+      text-align: center;
       font-size: 50px;
-      color: #01014a;
-      text-shadow: 2px 4px 6px #01014a;
+    }
+
+    h3{
+      color: #000050;
+      margin-bottom: 10px;
+      text-shadow: 2px 4px 6px gray;
       text-align: center;
     }
 
-    label{
-      color: #01014a;
+    form {
+      max-width: 900px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
     }
 
-    .btn{
-      color: white;
-      background-color: #000068;
-      box-shadow: 2px 2px 4px gray;
-      letter-spacing: 5px;
-    }
-  
-    .btn:hover{
-      box-shadow: 2px 3px 5px gray;
-      color: white;
-      background-color: #000084;
+    label {
+      display: block;
+      margin-top: 10px;
     }
 
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .section {
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .section button{
+      background-color: #000050;
+      width: auto;
+    }
+
+    .section button:hover{
+      background-color: #000045;
+    }
+
+    .order-items {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+      align-items: center;
+    }
+
+    .order-items select, .order-items input {
+      flex: 1;
+    }
+
+    .btn {
+      width: 100%;
+      background: #FF007F;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background: #cc0066;
+    }
+
+    .remove-btn {
+      color: white;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .total {
+      font-weight: bold;
+      font-size: 18px;
+      color: #333;
+    }
+
+    /* Popup Styles */
     .popup {
       display: none;
-      color: #ff0080;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .popup-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      width: 350px;
+      text-align: center;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .popup h3 {
+      color: #FF007F;
+    }
+
+    .popup ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
       margin-top: 10px;
-      font-weight: bold;
+    }
+
+    .popup ul li {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+
+    .popup button {
+      margin-top: 15px;
+      background: #FF007F;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .popup button:hover {
+      background: #cc0066;
     }
   </style>
-
 </head>
-<body class="p-4 bg-light">
+<body>
 
-  <div class="container bg-white p-4 rounded shadow">
-    <form id="Orderonline" novalidate>
-      <fieldset>
-        <legend class="mb-4">Order Form</legend>
+  <form id="orderForm">
+    <h1>Order Form</h1>
+     
+    <!-- Customer Details -->
+    <div class="section">
+      <h3>Customer Details</h3>
+      <label>Full Name</label>
+      <input type="text" name="fullname" required>
+      <label>Phone Number</label>
+      <input type="tel" name="phone" required>
+      <label>Email Address</label>
+      <input type="email" name="email">
+      <label>Street Address / Landmark</label>
+      <input type="text" name="address" required>
+      <label>City</label>
+      <input type="text" name="city" required>
+      <label>Pincode / ZIP Code</label>
+      <input type="text" name="pincode" required>
+      <label>State</label>
+      <input type="text" name="state" required>
+    </div>
 
-        <div class="mb-3">
-          <label for="fname" class="form-label">Name:</label>
-          <input type="text" class="form-control" id="fname" name="fname" required>
-          <div class="invalid-feedback">Name is required.</div>
+    <!-- Order Details -->
+    <div class="section">
+      <h3>Order Details</h3>
+      <div id="orderList">
+        <div class="order-items">
+          <select name="item[]" class="itemSelect" required>
+          <option data-price="0">Select</option>
+              <!-- Breakfast Menu -->
+          <option disabled>Breakfast Menu</option>
+          <option value="Masala Dosa" data-price="80">Masala Dosa</option>
+          <option value="Idli with Sambar" data-price="70">Idli with Sambar</option>
+          <option value="Aloo Paratha" data-price="90">Aloo Paratha</option>
+          <option value="Upma" data-price="70">Upma</option>
+          <option value="Poha" data-price="70">Poha</option>
+          <option value="Vegetable Uttapam" data-price="90">Vegetable Uttapam</option>
+          <option value="Poori with Aloo Curry" data-price="80">Poori with Aloo Curry</option>
+          <option value="Veg Sandwich" data-price="60">Veg Sandwich</option>
+      
+          <option value="Egg Curry with Paratha" data-price="100">Egg Curry with Paratha</option>
+          <option value="Chicken Keema Pav" data-price="120">Chicken Keema Pav</option>
+          <option value="Omelette with Toast" data-price="80">Omelette with Toast</option>
+          <option value="Fish Cutlet" data-price="110">Fish Cutlet</option>
+          <option value="Egg Bhurji" data-price="80">Egg Bhurji</option>
+          <option value="Chicken Sausage with Bread" data-price="100">Chicken Sausage with Bread</option>
+          <option value="Mutton Keema Dosa" data-price="140">Mutton Keema Dosa</option>
+          <option value="Egg Appam" data-price="90">Egg Appam</option>
+      
+              <!-- Lunch Menu -->
+          <option disabled>Lunch Menu</option>
+          <option value="South Indian Thali" data-price="120">South Indian Thali</option>
+          <option value="North Indian Thali" data-price="130">North Indian Thali</option>
+          <option value="Rajma Chawal" data-price="100">Rajma Chawal</option>
+          <option value="Paneer Butter Masala with Naan" data-price="150">Paneer Butter Masala with Naan</option>
+          <option value="Veg Biryani with Raita" data-price="140">Veg Biryani with Raita</option>
+          <option value="Dal Tadka with Jeera Rice" data-price="110">Dal Tadka with Jeera Rice</option>
+          <option value="Gobi Manchurian with Fried Rice" data-price="130">Gobi Manchurian with Fried Rice</option>
+          <option value="Veg Pulao with Boondi Raita" data-price="120">Veg Pulao with Boondi Raita</option>
+      
+          <option value="Chicken Curry with Steamed Rice" data-price="170">Chicken Curry with Steamed Rice</option>
+          <option value="Fish Fry with Lemon Rice" data-price="180">Fish Fry with Lemon Rice</option>
+          <option value="Mutton Curry with Rice" data-price="200">Mutton Curry with Rice</option>
+          <option value="Prawn Masala" data-price="210">Prawn Masala</option>
+          <option value="Chicken Biryani with Raita" data-price="180">Chicken Biryani with Raita</option>
+          <option value="Egg Curry with Rice" data-price="140">Egg Curry with Rice</option>
+          <option value="Tandoori Chicken with Butter Naan" data-price="200">Tandoori Chicken with Butter Naan</option>
+          <option value="Andhra Spicy Chicken with Rice" data-price="190">Andhra Spicy Chicken with Rice</option>
+      
+          <!-- Dinner Menu -->
+          <option disabled>Dinner Menu</option>
+          <option value="Butter Naan with Kadai Paneer" data-price="160">Butter Naan with Kadai Paneer</option>
+          <option value="Palak Paneer with Garlic Naan" data-price="160">Palak Paneer with Garlic Naan</option>
+          <option value="Veg Kurma with Appam" data-price="130">Veg Kurma with Appam</option>
+          <option value="Tandoori Roti with Chana Masala" data-price="120">Tandoori Roti with Chana Masala</option>
+          <option value="Lemon Rice with Curd" data-price="110">Lemon Rice with Curd</option>
+          <option value="Paneer Tikka with Mint Chutney" data-price="150">Paneer Tikka with Mint Chutney</option>
+          <option value="Veg Fried Rice with Gobi Manchurian" data-price="140">Veg Fried Rice with Gobi Manchurian</option>
+          <option value="Dal Makhani with Lachha Paratha" data-price="140">Dal Makhani with Lachha Paratha</option>
+      
+          <option value="Mutton Rogan Josh with Rice" data-price="210">Mutton Rogan Josh with Rice</option>
+          <option value="Chicken Tikka Masala with Roti" data-price="180">Chicken Tikka Masala with Roti</option>
+          <option value="Chicken Fried Rice with Gravy" data-price="160">Chicken Fried Rice with Gravy</option>
+          <option value="Egg Curry with Lachha Paratha" data-price="150">Egg Curry with Lachha Paratha</option>
+          <option value="Pesarattu with Egg & Coconut Chutney" data-price="140">Pesarattu with Egg & Coconut Chutney</option>
+          <option value="Fish Curry with Steamed Rice" data-price="190">Fish Curry with Steamed Rice</option>
+          <option value="Butter Chicken with Naan" data-price="200">Butter Chicken with Naan</option>
+          <option value="Hyderabadi Mutton Biryani" data-price="220">Hyderabadi Mutton Biryani</option>
+
+          <input type="number" name="qty[]" class="itemQty" value="1" min="1">
         </div>
+      </div>
+      <button type="button" class="btn" onclick="addItem()">+ Add Item</button>
+      <label>Special Instructions</label>
+      <textarea name="instructions" rows="3"></textarea>
+      <label>Add-ons / Extras</label>
+      <input type="text" name="addons" placeholder="Extra cheese, drinks, sauces...">
+    </div>
 
-        <div class="mb-3">
-          <label for="email" class="form-label">Email:</label>
-          <input type="email" class="form-control" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@gmail\.com" placeholder="example@gmail.com" required>
-          <div class="invalid-feedback">Valid Gmail is required (e.g., abc@gmail.com).</div>
-        </div>
+    <!-- Delivery or Pickup -->
+    <div class="section">
+      <h3>Delivery or Pickup</h3>
+      <label>Order Type</label>
+      <select name="orderType" required>
+        <option value="Delivery">Home Delivery</option>
+        <option value="Pickup">Pickup (Takeaway)</option>
+      </select>
+      <label>Delivery Time</label>
+      <input type="time" name="deliveryTime">
+    </div>
 
-        <div class="mb-3">
-          <label for="phone" class="form-label">Phone Number:</label>
-          <input type="tel" class="form-control" id="phone" name="phone" maxlength="10" pattern="\d{10}" required placeholder="10-digit number">
-          <div class="invalid-feedback">Enter a valid 10-digit phone number.</div>
-        </div>
+    <!-- Payment Details -->
+    <div class="section">
+      <h3>Payment Details</h3>
+      <label>Payment Method</label>
+      <select name="paymentMethod" required>
+        <option value="COD">Cash on Delivery</option>
+        <option value="UPI">UPI / QR Code</option>
+        <option value="Card">Credit/Debit Card</option>
+        <option value="NetBanking">Net Banking</option>
+      </select>
+      <label>Billing Address (if different)</label>
+      <input type="text" name="billingAddress">
+    </div>
 
-        <div class="mb-3">
-          <label for="menu" class="form-label">Menu:</label>
-          <select id="menu" name="menu" class="form-select" required>
-            <option value="">--Select an Item--</option>
-            <option>Idli</option>
-            <option>Dosa</option>
-            <option>Pongal</option>
-            <option>Poori</option>
-            <option>Chapati</option>
-            <option>South Indian Meals</option>
-            <option>Chicken Biryani</option>
-            <option>Veg Biryani</option>
-            <option>Paneer Butter Masala</option>
-            <option>Butter Naan</option>
-            <option>Fried Rice</option>
-            <option>Noodles</option>
-            <option>Masala Dosa</option>
-            <option>Medu Vada</option>
-            <option>Sambar Rice</option>
-            <option>Curd Rice</option>
-            <option>Parotta</option>
-            <option>Chole Bhature</option>
-            <option>Pav Bhaji</option>
-            <option>Gulab Jamun</option>
-          </select>
-          <div class="invalid-feedback">Please select a food item.</div>
-        </div>
+    <!-- Order Summary -->
+    <div class="section">
+      <h3>Order Summary</h3>
+      <div class="total">Total: ₹<span id="totalAmount">0</span></div>
+    </div>
 
-        <div class="mb-3">
-          <label for="date" class="form-label">Date:</label>
-          <input type="date" class="form-control" id="date" name="date" required>
-          <div class="invalid-feedback">Date is required.</div>
-        </div>
+    <!-- Confirmation -->
+    <div class="section">
+      <h3>Confirmation & Terms</h3>
+      <label><input type="checkbox" required> I agree to the Terms & Conditions</label>
+      <label><input type="checkbox"> I agree to receive updates via WhatsApp/SMS</label>
+    </div>
 
-        <div class="mb-3">
-          <label for="address" class="form-label">Delivery Address:</label>
-          <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
-          <div class="invalid-feedback">Address is required.</div>
-        </div>
+    <button type="submit" class="btn">Place Order</button>
+  </form>
 
-        <div class="mb-3">
-          <label for="pin" class="form-label">PIN:</label>
-          <input type="text" class="form-control" id="pin" name="pin" maxlength="6" pattern="\d{6}" placeholder="6-digit PIN" required>
-          <div class="invalid-feedback">Enter a valid 6-digit PIN.</div>
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label">Payment Method:</label><br>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="payment" id="cod" value="Cash on Delivery" required>
-            <label class="form-check-label" for="cod">Cash on Delivery</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="payment" id="upi" value="UPI">
-            <label class="form-check-label" for="upi">UPI</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="payment" id="card" value="Card">
-            <label class="form-check-label" for="card">Card</label>
-          </div>
-          <div class="invalid-feedback d-block">Please select a payment method.</div>
-        </div>
-
-        <div class="text-center">
-          <button type="submit" class="btn">ORDER NOW</button>
-          <div class="popup" id="popup">Your order is received.</div>
-        </div>
-      </fieldset>
-    </form>
+  <!-- Popup -->
+  <div class="popup" id="orderPopup">
+    <div class="popup-content">
+      <h3>Order Placed Successfully!</h3>
+      <p id="popupCustomer"></p>
+      <ul id="popupItems"></ul>
+      <p><strong>Total: ₹<span id="popupTotal"></span></strong></p>
+      <button onclick="closePopup()">OK</button>
+    </div>
   </div>
 
   <script>
-    // Set today's date as default and min
-    const today = new Date().toISOString().split("T")[0];
-    document.getElementById("date").value = today;
-    document.getElementById("date").min = today;
+  function addItem() {
+    const orderList = document.getElementById("orderList");
+    const div = document.createElement("div");
+    div.classList.add("order-items");
+    div.innerHTML = `
+  <select name="item[]" class="itemSelect" required>
+    <option value="" data-price="0">-- Select Item --</option>
 
-    // Form validation & popup
-    const form = document.getElementById("Orderonline");
-    const popup = document.getElementById("popup");
+    <!-- Lunch Menu -->
+    <option value="South Indian Thali" data-price="120">South Indian Thali</option>
+    <option value="North Indian Thali" data-price="130">North Indian Thali</option>
+    <option value="Rajma Chawal" data-price="100">Rajma Chawal</option>
+    <option value="Paneer Butter Masala with Naan" data-price="150">Paneer Butter Masala with Naan</option>
+    <option value="Veg Biryani with Raita" data-price="140">Veg Biryani with Raita</option>
+    <option value="Dal Tadka with Jeera Rice" data-price="110">Dal Tadka with Jeera Rice</option>
+    <option value="Gobi Manchurian with Fried Rice" data-price="130">Gobi Manchurian with Fried Rice</option>
+    <option value="Veg Pulao with Boondi Raita" data-price="120">Veg Pulao with Boondi Raita</option>
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
+    <option value="Chicken Curry with Steamed Rice" data-price="170">Chicken Curry with Steamed Rice</option>
+    <option value="Fish Fry with Lemon Rice" data-price="180">Fish Fry with Lemon Rice</option>
+    <option value="Mutton Curry with Rice" data-price="200">Mutton Curry with Rice</option>
+    <option value="Prawn Masala" data-price="210">Prawn Masala</option>
+    <option value="Chicken Biryani with Raita" data-price="180">Chicken Biryani with Raita</option>
+    <option value="Egg Curry with Rice" data-price="140">Egg Curry with Rice</option>
+    <option value="Tandoori Chicken with Butter Naan" data-price="200">Tandoori Chicken with Butter Naan</option>
+    <option value="Andhra Spicy Chicken with Rice" data-price="190">Andhra Spicy Chicken with Rice</option>
 
-      if (form.checkValidity()) {
-        popup.style.display = "block";
-        saveFormData(); // Save data
-        setTimeout(() => popup.style.display = "none", 2000);
-        form.reset();
-        document.getElementById("date").value = today;
-      } else {
-        form.classList.add('was-validated');
+    <!-- Dinner Menu -->
+    <option value="Butter Naan with Kadai Paneer" data-price="160">Butter Naan with Kadai Paneer</option>
+    <option value="Palak Paneer with Garlic Naan" data-price="160">Palak Paneer with Garlic Naan</option>
+    <option value="Veg Kurma with Appam" data-price="130">Veg Kurma with Appam</option>
+    <option value="Tandoori Roti with Chana Masala" data-price="120">Tandoori Roti with Chana Masala</option>
+    <option value="Lemon Rice with Curd" data-price="110">Lemon Rice with Curd</option>
+    <option value="Paneer Tikka with Mint Chutney" data-price="150">Paneer Tikka with Mint Chutney</option>
+    <option value="Veg Fried Rice with Gobi Manchurian" data-price="140">Veg Fried Rice with Gobi Manchurian</option>
+    <option value="Dal Makhani with Lachha Paratha" data-price="140">Dal Makhani with Lachha Paratha</option>
+
+    <option value="Mutton Rogan Josh with Rice" data-price="210">Mutton Rogan Josh with Rice</option>
+    <option value="Chicken Tikka Masala with Roti" data-price="180">Chicken Tikka Masala with Roti</option>
+    <option value="Chicken Fried Rice with Gravy" data-price="160">Chicken Fried Rice with Gravy</option>
+    <option value="Egg Curry with Lachha Paratha" data-price="150">Egg Curry with Lachha Paratha</option>
+    <option value="Pesarattu with Egg & Coconut Chutney" data-price="140">Pesarattu with Egg & Coconut Chutney</option>
+    <option value="Fish Curry with Steamed Rice" data-price="190">Fish Curry with Steamed Rice</option>
+    <option value="Butter Chicken with Naan" data-price="200">Butter Chicken with Naan</option>
+    <option value="Hyderabadi Mutton Biryani" data-price="220">Hyderabadi Mutton Biryani</option>
+
+    <!-- Breakfast Menu -->
+    <option value="Masala Dosa" data-price="80">Masala Dosa</option>
+    <option value="Idli with Sambar" data-price="70">Idli with Sambar</option>
+    <option value="Aloo Paratha" data-price="90">Aloo Paratha</option>
+    <option value="Upma" data-price="70">Upma</option>
+    <option value="Poha" data-price="70">Poha</option>
+    <option value="Vegetable Uttapam" data-price="90">Vegetable Uttapam</option>
+    <option value="Poori with Aloo Curry" data-price="80">Poori with Aloo Curry</option>
+    <option value="Veg Sandwich" data-price="60">Veg Sandwich</option>
+
+    <option value="Egg Curry with Paratha" data-price="100">Egg Curry with Paratha</option>
+    <option value="Chicken Keema Pav" data-price="120">Chicken Keema Pav</option>
+    <option value="Omelette with Toast" data-price="80">Omelette with Toast</option>
+    <option value="Fish Cutlet" data-price="110">Fish Cutlet</option>
+    <option value="Egg Bhurji" data-price="80">Egg Bhurji</option>
+    <option value="Chicken Sausage with Bread" data-price="100">Chicken Sausage with Bread</option>
+    <option value="Mutton Keema Dosa" data-price="140">Mutton Keema Dosa</option>
+    <option value="Egg Appam" data-price="90">Egg Appam</option>
+  </select>
+  <input type="number" name="qty[]" class="itemQty" value="1" min="1">
+  <button type="button" class="remove-btn" onclick="removeItem(this)">Remove</button>
+`;
+
+    orderList.appendChild(div);
+    attachListeners();
+  }
+
+  function removeItem(button) {
+    button.parentElement.remove();
+    calculateTotal();
+  }
+
+  function calculateTotal() {
+    let total = 0;
+    document.querySelectorAll(".order-items").forEach(item => {
+      const select = item.querySelector(".itemSelect");
+      const qty = item.querySelector(".itemQty").value;
+      const price = parseInt(select.selectedOptions[0].getAttribute("data-price"));
+      total += price * qty;
+    });
+    document.getElementById("totalAmount").innerText = total;
+  }
+
+  function attachListeners() {
+    document.querySelectorAll(".itemSelect, .itemQty").forEach(el => {
+      el.removeEventListener("change", calculateTotal);
+      el.addEventListener("change", calculateTotal);
+    });
+  }
+
+  attachListeners();
+
+  document.getElementById("orderForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const name = document.querySelector("[name='fullname']").value;
+    let total = 0;
+    const itemList = document.querySelectorAll(".order-items");
+    document.getElementById("popupItems").innerHTML = "";
+
+    itemList.forEach(row => {
+      const select = row.querySelector(".itemSelect");
+      const qty = row.querySelector(".itemQty").value;
+      const price = parseInt(select.selectedOptions[0].getAttribute("data-price"));
+      if (select.value) {
+        const listItem = document.createElement("li");
+        listItem.textContent = `${select.value} x ${qty} = ₹${price * qty}`;
+        document.getElementById("popupItems").appendChild(listItem);
+        total += price * qty;
       }
     });
 
-    // Save to localStorage
-    function saveFormData() {
-      const data = {
-        name: form.fname.value,
-        email: form.email.value,
-        phone: form.phone.value,
-        menu: form.menu.value,
-        date: form.date.value,
-        address: form.address.value,
-        pin: form.pin.value,
-        payment: form.payment.value
-      };
-      localStorage.setItem("orderData", JSON.stringify(data));
-    }
+    document.getElementById("popupCustomer").innerText = `Customer: ${name}`;
+    document.getElementById("popupTotal").innerText = total;
+    document.getElementById("orderPopup").style.display = "flex";
+  });
 
-    // Restrict max length
-    document.getElementById("phone").addEventListener("input", function () {
-      this.value = this.value.slice(0, 10);
-    });
-    document.getElementById("pin").addEventListener("input", function () {
-      this.value = this.value.slice(0, 6);
-    });
+  function closePopup() {
+    document.getElementById("orderPopup").style.display = "none";
+    document.getElementById("orderForm").reset();
+    document.getElementById("totalAmount").innerText = 0;
+  }
   </script>
+
 </body>
 </html>
