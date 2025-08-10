@@ -1,108 +1,408 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Lunch Table</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Lunch Table</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="style.css">
+  <style>
+    body{
+      text-align: center;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    h1{
+      padding-bottom: 30px;
+      color: #191970;
+      text-shadow: 2px 4px 6px #3e3e3e;
+    }
+
+    .tablebooking {
+      overflow-y: hidden;
+      margin: auto 150px;
+    }
+
+    .book-btn .btn {
+      width: 270px;
+      padding: 5px 0px;
+      background-color: #e6e6e6;
+    }
+
+    .book-btn .btn:hover {
+      background-color: darkgray;
+      border-bottom: 2px solid #c30062;
+    }
+
+    .book-btn .btn:onclick {
+      background-color: darkgray;
+      border-bottom: 2px solid #c30062;
+    }
+
+    .bookingdetails {
+      float: left;
+      border-right: 1px solid #19015f;
+    }
+
+    .overview {
+      display: flex;
+    }
+
+    .overview .details {
+      padding: 15px;
+      width: 300px;
+      text-align-last: left;
+    }
+
+    .overview .details a{
+      text-decoration: none;
+      color: black;
+    }
+
+    .overview .details h4 {
+      color: #000050;
+    }
+
+    .menu-list {
+      display: none;  /* hide menu by default */
+    }
+
+    .menu-list .details h4{
+      padding: 5px auto;
+      font-size: 35px;
+    }
+
+    .menu-list li{
+      list-style-type: square;
+    }
+
+    .menu-list .details {
+      padding: 15px;
+      text-align-last: left;
+    }
+
+    .bookform {
+      float: right;
+      max-width: fit-content;
+    }
+
+    .bookform table {
+      float: right;
+      margin-top: 60px;
+    }
+
+    .bookform table th {
+      text-align-last: left;
+      padding: 15px 0px;
+      color: #000050;
+    }
+
+    .bookform input, select {
+      width: 270px;
+      margin-left: 10px;
+      height: 24px;
+      border: 2px solid black;
+    }
+
+    .bookform input:hover, select:hover {
+      height: 25px;
+    }
+
+    .bookform button {
+      cursor: pointer;
+      height: 35px;
+      width: 80%;
+      margin-top: 25px;
+      margin-left: 20%;
+      border-radius: 5px;
+      box-shadow: 2px 2px 4px;
+      background-color: #e6e6e6;
+      letter-spacing: 5px;
+      font-weight: bold;
+    }
+
+    .bookform button:hover {
+      box-shadow: 2px 3px 5px;
+      background-color: darkgray;
+    }
+
+    @media screen and (max-width: 1120px) {
+      .tablebooking {
+        overflow-y: scroll;
+        height: auto;
+        margin: auto;
+      }
+
+      .overview .details {
+        width: 300px;
+      }
+
+      .bookingdetails {
+        float: none;
+        margin-bottom: 10px;
+        border-right: none;
+      }
+
+      .menu-list{
+        margin-left: 80px;
+      }
+
+      .bookform table {
+        float: none;
+      }
+
+      .bookform {
+        padding-left: 20%;
+      }
+
+      .bookform button {
+        margin-bottom: 15px;
+      }
+    }
+
+    @media screen and (max-width: 640px) {
+      .book-btn .btn {
+        width: 170px;
+      }
+
+      .overview {
+        display: block;
+        padding-left: 20%;
+      }
+
+      .overview .details {
+        max-width: fit-content;
+      }
+
+      .bookingdetails {
+        float: none;
+        border-right: none;
+      }
+
+      .bookform table {
+        float: none;
+      }
+
+      .bookform {
+        padding-left: 10%;
+      }
+
+      .bookform button {
+        margin-bottom: 15px;
+      }
+    }
+
+    /* POPUP STYLES */
+    #popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      display: none; /* Hidden by default */
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .popup-box {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 2px 2px 10px #444;
+      text-align: center;
+      z-index: 1000;
+      animation: slideDown 0.3s ease-in-out;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .popup-box p {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .popup-box button {
+      padding: 8px 20px;
+      background-color: #c30062;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .popup-box button:hover {
+      background-color: #a00050;
+    }
+
+  </style>
+
 </head>
 <body>
+  <div class="tablebooking">
+    <h1>Book your table for Lunch</h1>
 
-    <div class="tablebooking">
-
-    <h2>Book your table for Lunch</h2>
-    
     <div class="bookingdetails">
+      <div class="book-btn btn-group">
+        <button type="button" class="btn btn3">Overview</button>
+        <button type="button" class="btn btn4">Menu</button>
+      </div>
 
-        <div class="book-btn btn-group">
-            <button type="button" class="btn btn3">Overview</button>
-            <button type="button" class="btn btn4">Menu</button>
+      <div class="overview">
+        <div class="details">
+          <h4>Phone Number</h4>
+          <p><a href="tel:+919638527410">+91 9638527410</a></p>
+          <h4>Cuisines</h4>
+          <p>Biryani, Thali, Butter chicken with naan, Masala Dosa</p>
+          <h4>Average Cost</h4>
+          <p>₹350 for two people(approx.)</p>
+          <h4>Famous for</h4>
+          <p>Rooftop Candlelight Dinner, Garden View Breakfast, Live Music Lunch, Poolside Evening </p>
         </div>
 
-    <div class="overview">
-      <div class="details">
-      <h4>Phone Number</h4>
-      <p>+91 9638527410</p>
-      
-      <h4>Cuisines</h4>
-      <p>Biryani, North Indian, Chinese</p>
-      
-      <h4>Average Cost</h4>
-      <p>$800 for two people(approx.)</p>
-      
-      <h4>Famous for</h4>
-      <p>Rooftop Ambiance, Mutton <br>Biryani,Chicken Biryani, <br>Hyderbadi Dum Biryani, <br>Vegetable Biryani, Non Veg <br>Biryani, Hydrabadi Biryani, <br>Haleem </p>
+        <div class="details">
+          <h4>Openings hours</h4>
+          <p>Mon- Sat: 7am - 10pm <br/> Sat - Sun: 8am - 9pm</p>
+          <h4>Address</h4>
+          <p>Hussain Sagar, Khairtabad, Hyderabad, Telangana. 500003</p>
+
+          <div class="map-container">
+            <div style="width: 100%; height: 400px;">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.443122107095!2d78.46182217471177!3d17.41556750299485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb973f93ffb9ed%3A0xc21f5b3fd3b2e5b8!2sHussain%20Sagar%20Lake!5e0!3m2!1sen!2sin!4v1693739295486!5m2!1sen!2sin" 
+                width="90%" 
+                height="60%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="details">
-      <h4>Openings hours</h4>
-      <p>Mon- Sat: 7am - 10pm <br> Sat - Sun: 8am - 9pm</p>
-      
-      <h4>Address</h4>
-      <p>Hussain Sagar, Khairtabad, <br>Hydrabad, Telangana. 500003</p><br>
-      
-        <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1821607871636!2d78.1024701142876!3d11.218145352942736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babd9878e5f8a63%3A0x29e1142a71c0bb5f!2sNamakkal!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
-              width="100%" 
-              height="275" 
-              style="border:0;" 
-              allowfullscreen="" 
-              loading="lazy" 
-              referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+      <div class="menu-list">
+        <div class="details">
+          <h4>Lunch Menu</h4>
+          <h5>Veg:</h5>
+          <ul>
+            <li>South Indian Thali</li>
+            <li>North Indian Thali</li>
+            <li>Rajma Chawal</li>
+            <li>Paneer Butter Masala <br>with Naan</li>
+            <li>Veg Biryani with Raita</li>
+            <li>Dal Tadka with Jeera Rice</li>
+            <li>Gobi Manchurian with Fried Rice</li>
+            <li>Veg Pulao with Boondi <br>Raita</li>
+          </ul>
+          <h5>Non-Veg:</h5>
+          <ul>
+            <li>Chicken Curry with Steamed Rice</li>
+            <li>Fish Fry with Lemon Rice</li>
+            <li>Mutton Curry with Rice</li>
+            <li>Prawn Masala</li>
+            <li>Chicken Biryani with Raita</li>
+            <li>Egg Curry with Rice</li>
+            <li>Tandoori Chicken with Butter Naan</li>
+            <li>Andhra Spicy Chicken with Rice</li>
+          </ul>
+        </div>
       </div>
-      </div>
-
     </div>
 
     <form class="bookform">
-
-            <table>
-            <tr>
-            <th><label for="fname">Name:</label></th>
-            <td><input type="text" id="fname" name="fname" required></td>
-            </tr>
-            
-            <tr>
-            <th><label for="email">Enter your email:</label></th>
-            <td><input type="email" id="email" name="email" required></td>
-            </tr>
-
-            <tr>
-            <th><label for="phone">Phone Number:</label></th>
-            <td><input type="phone" id="phone" name="phone" required></td>
-            </tr>
-            
-            <tr>
-            <th><label for="Menu">Menu:</label></th>
-            <td><select id="menu" name="menu" required>
-                  <option value=""></option>
-                  <option value="veg">Veg</option>
-                  <option value="non-veg">Non-Veg</option>
-                  <option value="both">Both</option>
-                </select></td>
-            </tr>
-
-            <tr>
-            <th><label for="number">Guest Count:</label></th>
-            <td><input type="number" id="number" name="seats" required></td>
-            </tr>
-
-            <tr>
-            <th><label>Dine in Date:</label></th>
-            <td><input type="date" required></td>
-            </tr>
-              
-            </table>
-              
-            <button>BOOK</button>
-        
+      <table>
+        <tr>
+          <th><label for="fname">Name:</label></th>
+          <td><input type="text" id="fname" name="fname" required /></td>
+        </tr>
+        <tr>
+          <th><label for="email">Enter your email:</label></th>
+          <td><input type="email" id="email" name="email" required /></td>
+        </tr>
+        <tr>
+          <th><label for="phone">Phone Number:</label></th>
+          <td><input type="tel" id="phone" name="phone" required /></td>
+        </tr>
+        <tr>
+          <th><label for="menu">Menu:</label></th>
+          <td>
+            <select id="menu" name="menu" required>
+              <option value=""></option>
+              <option value="veg">Veg</option>
+              <option value="non-veg">Non-Veg</option>
+              <option value="both">Both</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th><label for="number">Guest Count:</label></th>
+          <td><input type="number" id="number" name="seats" required /></td>
+        </tr>
+        <tr>
+          <th><label>Dine in Date:</label></th>
+          <td><input type="date" id="date" required /></td>
+        </tr>
+      </table>
+      <button type="submit">BOOK</button>
     </form>
-</div>
+  </div>
 
-</div>
+  <!-- Popup -->
+  <div id="popup">
+    <div class="popup-box">
+      <p id="popupMessage">Your table has been booked successfully!</p>
+      <button id="okBtn">OK</button>
+    </div>
+  </div>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuBtn = document.querySelector(".btn4");
+      const overviewBtn = document.querySelector(".btn3");
+      const overview = document.querySelector(".overview");
+      const menu = document.querySelector(".menu-list");
+
+      menuBtn.addEventListener("click", () => {
+        overview.style.display = "none";
+        menu.style.display = "block";
+      });
+
+      overviewBtn.addEventListener("click", () => {
+        menu.style.display = "none";
+        overview.style.display = "flex";
+      });
+
+      const bookBtn = document.querySelector(".bookform button");
+      const popup = document.getElementById("popup");
+      const okBtn = document.getElementById("okBtn");
+      const popupMessage = document.getElementById("popupMessage");
+      const form = document.querySelector(".bookform");
+
+      bookBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        const name = document.getElementById("fname").value.trim();
+        const guests = document.getElementById("number").value.trim();
+        popupMessage.innerHTML = `Hi <strong>${name || "Guest"}</strong>, your table for <strong>${guests || "0"}</strong> guest(s) has been booked successfully!`;
+        popup.style.display = "flex";
+      });
+
+      okBtn.addEventListener("click", function () {
+        popup.style.display = "none";
+        form.reset();
+      });
+    });
+  </script>
 </body>
 </html>
