@@ -3,10 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Henny+Penny&family=Merienda:wght@300..900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+  
 <title>Sign In / Sign Up</title>
 <style>
     body {
-        font-family: Arial, sans-serif;
+        font-family: "Philosopher", sans-serif;
         background: #f4f4f4;
         display: flex;
         justify-content: center;
@@ -14,6 +18,13 @@
         height: 100vh;
         margin: 0;
     }
+    
+    button,a{
+        cursor: pointer;
+        font-family: "Playfair Display", serif;
+        font-weight: bold
+    }
+    
     .container {
         background: #fff;
         padding: 25px;
@@ -96,9 +107,10 @@
         }
 
         alert(`Welcome ${username} to Sizzloom`);
-        window.location.href = "Restaurant.html";
+        window.location.href = "index.html";
     }
 </script>
 
 </body>
 </html>
+
