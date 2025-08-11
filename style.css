@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Henny+Penny&family=Merienda:wght@300..900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Tangerine:wght@400;700&display=swap');
+
 /*------------------------- GLOBAL STYLE  -------------------------*/
 *{
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Philosopher", sans-serif;
     margin: 0%;
     text-align: center;
     overflow-x: hidden;
@@ -29,12 +31,14 @@
 
 body {
   position: relative; 
+  font-family: "Philosopher", sans-serif;
 }
 
 /*------------------------- BUTTONS & A -------------------------*/
 button,a{
   cursor: pointer;
-  font-family: "Philosopher", sans-serif;
+  font-family: "Playfair Display", serif;
+  font-weight: bold
 }
 
 /*-------------------------NAVIGATION BAR-------------------------*/
@@ -52,6 +56,8 @@ button,a{
 .navbar li {
   display: inline;
   margin: 0 10px;
+  font-family: "Playfair Display", serif;
+  font-weight: bold
 }
 
 .navbar li a {
@@ -96,10 +102,12 @@ button,a{
 
 /*-------------------------TITLE-------------------------*/
 #one h1{
-    margin-top: 100px;
+    margin-top: 120px;
     font-size: 70px;
     color:  #000050;
     text-shadow: 2px 4px 6px #191970;
+    font-family: "Henny Penny", system-ui;    
+    overflow-y: hidden;
 }
 
 @media screen and (max-width: 1007px){
@@ -192,9 +200,11 @@ button,a{
 /*-------------------------HEADING-------------------------*/
 h2{
     margin-top: 10px;
-    font-size: 50px;
-    color: #191970;
+    font-size: 45px;
+    font-family: "Merienda", cursive;
+    color: #191970 !important;
     text-shadow: 2px 4px 6px #3e3e3e;
+    overflow-y: hidden;
 }
 
 /*-------------------------CHECK OUR SHOUP-------------------------*/
@@ -235,12 +245,13 @@ h2{
     width: 150px;
 }
 
-.img3 p{
+.img3 a{
     text-decoration: none;
     color: black;
+    font-weight: lighter;
 }
 
-.img3 p:hover{
+.img3 a:hover{
   color: #FF007F;
   cursor: pointer;
 }
@@ -528,7 +539,33 @@ h2{
     background-color: #02025c;
 }
 
-/*-------------------------------------------------- TABLE BOOKING (Inline) --------------------------------------------------*/
+/*------------------------------- Appetizers, Drinks, Dessert, Street food, Fusion bites ------------------------------- */
+.Checkshops h2{    
+    font-size: 50px;
+    font-family: "Merienda", cursive;
+    color: #c30062 !important;
+    text-shadow: 2px 4px 6px gray;
+}
+
+.Checkshops h3{
+    font-size: 30px;
+    color: #191970;
+    font-family: "Playfair Display", serif;
+    text-shadow: 2px 4px 6px gray;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.Checkshops h4{
+    font-family: "Playfair Display", serif;   
+}
+
+.Checkshops li{
+    margin-left: 25%;
+    text-align-last: left;
+    line-height: 30px;}
+
+/*---------------------------------------------- TABLE BOOKING (Inline) ----------------------------------------------*/
 
 /*---------------------------------------------- ORDER ONLINE (Inline) ----------------------------------------------*/
 
@@ -548,15 +585,20 @@ footer li{
     list-style-type: none;
     color: white;
     display: inline-block;
-    padding-right: 25px;
+    margin-right: 25px;
 }
 
 footer .foot-link a{
     text-decoration: none;
-    color: black;
-    background-color: white;
+    color: white;
     border-radius: 50%;
+    margin-right: 20px;
 }
+
+footer .foot-link i{
+    size: 70%;
+}
+    
 
 footer .foot-title{
     padding-top: 8px;
@@ -586,3 +628,4 @@ footer .foot-btn .btn2:hover{
     background-color: #0202a9;
 }
 
+/*------------------------------------- SIGN IN ? SIGN UP (inline) -------------------------------------*/
