@@ -10,186 +10,143 @@
     body{
       text-align: center;
       font-family: "Philosopher", sans-serif;
+      background: #fdfdfd;
+      padding: 20px 0 50px 0;
     }
 
     h1{
-      padding-bottom: 30px;
+      padding-bottom: 25px;
       color: #191970;
       font-family: "Merienda", cursive;
-      text-shadow: 2px 4px 6px #3e3e3e;
+      text-shadow: 2px 4px 6px #bfbfbf;
     }
 
     .tablebooking {
-      overflow-y: hidden;
-      margin: auto 150px;
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
     }
 
     .book-btn .btn {
-      width: 270px;
-      padding: 5px 0px;
-      background-color: #e6e6e6;
+      width: 140px;
+      padding: 8px 0px;
+      background-color: #f1f1f1;
+      font-weight: bold;
+      border: 1px solid #ccc;
     }
 
-    .book-btn .btn:hover {
+    .book-btn .btn:hover, .book-btn .btn:active {
       background-color: darkgray;
-      border-bottom: 2px solid #c30062;
-    }
-
-    .book-btn .btn:active {
-      background-color: darkgray;
-      border-bottom: 2px solid #c30062;
+      border-bottom: 3px solid #c30062;
     }
 
     .bookingdetails {
       float: left;
-      border-right: 1px solid #19015f;
+      width: 50%;
+      border-right: 1px solid #ddd;
+      padding-right: 20px;
     }
 
     .overview {
       display: flex;
+      margin-top: 20px;
+      text-align: left;
     }
 
     .overview .details {
-      padding: 15px;
-      width: 300px;
-      text-align-last: left;
+      padding: 10px;
+      width: 50%;
     }
 
     .overview .details a{
       text-decoration: none;
-      color: black;
+      color: #191970;
+      font-weight: bold;
     }
 
     .overview .details h4 {
       color: #000050;
+      font-size: 18px;
+      margin-top: 10px;
     }
 
     .menu-list {
-      display: none;  /* hide menu by default */
+      display: none;
+      margin-top: 20px;
+      text-align: left;
+      padding-left: 20px;
     }
 
     .menu-list .details h4{
-      padding: 5px auto;
-      font-size: 35px;
+      font-size: 24px;
+      color: #000050;
     }
 
     .menu-list li{
       list-style-type: square;
-    }
-
-    .menu-list .details {
-      padding: 15px;
-      text-align-last: left;
+      margin-bottom: 4px;
     }
 
     .bookform {
       float: right;
-      max-width: fit-content;
+      width: 45%;
+      padding-left: 20px;
     }
 
     .bookform table {
-      float: right;
-      margin-top: 60px;
+      width: 100%;
+      margin-top: 10px;
     }
 
     .bookform table th {
-      text-align-last: left;
-      padding: 15px 0px;
+      text-align: left;
+      padding: 12px 0px;
       color: #000050;
+      font-size: 15px;
     }
 
     .bookform input, select {
-      width: 270px;
-      margin-left: 10px;
-      height: 28px;
-      border: 2px solid black;
+      width: 100%;
+      padding: 6px 10px;
+      height: 38px;
+      border: 1px solid #aaa;
+      border-radius: 6px;
+      box-sizing: border-box;
     }
 
     .bookform button {
       cursor: pointer;
-      height: 35px;
-      width: 80%;
-      margin-top: 25px;
-      margin-left: 20%;
-      border-radius: 5px;
-      box-shadow: 2px 2px 4px;
-      background-color: #e6e6e6;
-      letter-spacing: 5px;
+      height: 42px;
+      width: 100%;
+      margin-top: 20px;
+      border-radius: 6px;
+      background-color: #000050;
+      color: white;
+      letter-spacing: 3px;
       font-weight: bold;
+      border: none;
+      transition: all 0.3s ease;
     }
 
     .bookform button:hover {
-      box-shadow: 2px 3px 5px;
-      background-color: darkgray;
+      background-color: #c30062;
     }
 
-    @media screen and (max-width: 1007px) {
-      .tablebooking {
-        overflow-y: scroll;
-        height: auto;
-        margin: auto;
-      }
-
-      .overview .details {
-        width: 300px;
-      }
-
-      .bookingdetails {
+    @media screen and (max-width: 900px) {
+      .bookingdetails, .bookform {
         float: none;
-        margin-bottom: 10px;
-        border-right: none;
+        width: 100%;
+        border: none;
+        padding: 0;
       }
-
-      .menu-list{
-        margin-left: 80px;
-      }
-
-      .bookform table {
-        float: none;
-      }
-
-      .bookform {
-        padding-left: 20%;
-      }
-
-      .bookform button {
-        margin-bottom: 15px;
-      }
-    }
-
-    @media screen and (max-width: 540px) {
-      .book-btn .btn {
-        width: 170px;
-      }
-
       .overview {
-        display: block;
-        padding-left: 20%;
+        flex-direction: column;
       }
-
       .overview .details {
-        max-width: fit-content;
-      }
-
-      .bookingdetails {
-        float: none;
-        border-right: none;
-      }
-
-      .bookform table {
-        float: none;
-      }
-
-      .bookform input, select{
-        width: 250px;
-      }
-
-      .bookform {
-        padding-left: 10%;
-      }
-      
-      .bookform button {
-        margin-bottom: 15px;
+        width: 100%;
       }
     }
 
@@ -201,16 +158,10 @@
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.4);
-      display: none; /* Hidden by default */
+      display: none;
       justify-content: center;
       align-items: center;
       z-index: 999;
-      animation: fadeIn 0.3s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
     }
 
     .popup-box {
@@ -219,13 +170,7 @@
       border-radius: 8px;
       box-shadow: 2px 2px 10px #444;
       text-align: center;
-      z-index: 1000;
-      animation: slideDown 0.3s ease-in-out;
-    }
-
-    @keyframes slideDown {
-      from { transform: translateY(-30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+      max-width: 400px;
     }
 
     .popup-box p {
@@ -234,18 +179,13 @@
     }
 
     .popup-box button {
-      padding: 8px 20px;
+      padding: 8px 25px;
       background-color: #c30062;
       color: white;
       border: none;
       border-radius: 4px;
       cursor: pointer;
     }
-
-    .popup-box button:hover {
-      background-color: #a00050;
-    }
-
   </style>
 
 </head>
@@ -264,59 +204,40 @@
           <h4>Phone Number</h4>
           <p><a href="tel:+919638527410">+91 9638527410</a></p>
           <h4>Cuisines</h4>
-          <p>Paneer Butter masala with naan, Rogan josh, Hyderabadi biryani, Dal makhani with jeera rice</p>
+          <p>Paneer Butter Masala with Naan, Rogan Josh, Hyderabadi Biryani, Dal Makhani</p>
           <h4>Average Cost</h4>
-          <p>₹100 for two <br>people(approx.)</p>
+          <p>₹450 for two people (approx.)</p>
           <h4>Famous for</h4>
-          <p>Rooftop Candlelight Dinner, Garden View Breakfast, Live Music Lunch, Poolside Evening </p>
+          <p>Rooftop Candlelight Dinners, Poolside Evening Cocktails, Live Barbeque Grill, Ambient Music</p>
         </div>
 
         <div class="details">
           <h4>Openings hours</h4>
-          <p>Mon- Sat: 7am - 10pm <br /> Sat - Sun: 8am - 9pm</p>
+          <p>Mon - Sat: 7:00 AM - 10:00 PM <br /> Sun: 8:00 AM - 9:00 PM</p>
           <h4>Address</h4>
-          <p>Hussain Sagar, Khairtabad, Hyderabad, Telangana. 500003</p>
-
-          <div class="map-container">
-            <div style="width: 100%; height: 400px;">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.443122107095!2d78.46182217471177!3d17.41556750299485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb973f93ffb9ed%3A0xc21f5b3fd3b2e5b8!2sHussain%20Sagar%20Lake!5e0!3m2!1sen!2sin!4v1693739295486!5m2!1sen!2sin" 
-                width="90%" 
-                height="60%" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
-            </div>
-          </div>
+          <p>Hussain Sagar, Khairtabad, Hyderabad, Telangana - 500003</p>
         </div>
       </div>
 
-    <div class="menu-list">
+      <div class="menu-list">
         <div class="details">
-          <h4>Dinner Menu</h4>
-          <h5>Veg:</h5>
+          <h4>Evening Dinner Menu</h4>
+          <h6 class="text-success mt-3">Pure Vegetarian:</h6>
           <ul>
             <li>Butter Naan with Kadai Paneer</li>
-            <li>Palak Paneer with Garlic Naan</li>
-            <li>Veg Kurma with Appam</li>
-            <li>Tandoori Roti with Chana Masala</li>
-            <li>Lemon Rice with Curd</li>
-            <li>Paneer Tikka with Mint Chutney</li>
-            <li>Veg Fried Rice with Gobi Manchurian</li>
-            <li>Dal Makhani with Lachha Paratha</li>
+            <li>Creamy Palak Paneer with Garlic Naan</li>
+            <li>Kerala Veg Kurma with Soft Appam</li>
+            <li>Tandoori Roti with Spiced Chana Masala</li>
+            <li>Smoky Paneer Tikka with Mint Chutney</li>
+            <li>Slow-cooked Dal Makhani with Lachha Paratha</li>
           </ul>
-          <h5>Non-Veg:</h5>
+          <h6 class="text-danger mt-3">Non-Veg Signature:</h6>
           <ul>
-            <li>Mutton Rogan Josh with Rice</li>
-            <li>Chicken Tikka Masala with Roti</li>
-            <li>Chicken Fried Rice with Gravy</li>
-            <li>Egg Curry with Lachha Paratha</li>
-            <li>Pesarattu with Egg & Coconut Chutney</li>
-            <li>Fish Curry with Steamed Rice</li>
-            <li>Butter Chicken with Naan</li>
-            <li>Hyderabadi Mutton Biryani</li>
+            <li>Kashmiri Mutton Rogan Josh with Basmati Rice</li>
+            <li>Smoked Chicken Tikka Masala with Butter Roti</li>
+            <li>Spicy Egg Curry with Flaky Paratha</li>
+            <li>Malabar Fish Curry with Steamed Rice</li>
+            <li>Authentic Hyderabadi Mutton Dum Biryani</li>
           </ul>
         </div>
       </div>
@@ -325,23 +246,23 @@
     <form class="bookform">
       <table>
         <tr>
-          <th><label for="fname">Name:</label></th>
-          <td><input type="text" id="fname" name="fname" required /></td>
+          <th><label for="fname">Full Name:</label></th>
+          <td><input type="text" id="fname" name="fname" placeholder="Your name" required /></td>
         </tr>
         <tr>
-          <th><label for="email">Enter your email:</label></th>
-          <td><input type="email" id="email" name="email" required /></td>
+          <th><label for="email">Email Address:</label></th>
+          <td><input type="email" id="email" name="email" placeholder="you@email.com" required /></td>
         </tr>
         <tr>
           <th><label for="phone">Phone Number:</label></th>
-          <td><input type="tel" id="phone" name="phone" required /></td>
+          <td><input type="tel" id="phone" name="phone" placeholder="+91 00000 00000" required /></td>
         </tr>
         <tr>
-          <th><label for="menu">Menu:</label></th>
+          <th><label for="menu">Menu Type:</label></th>
           <td>
             <select id="menu" name="menu" required>
-              <option value="" disabled selected>Select Menu</option>
-              <option value="veg">Veg</option>
+              <option value="">Choose preference</option>
+              <option value="veg">Pure Veg</option>
               <option value="non-veg">Non-Veg</option>
               <option value="both">Both</option>
             </select>
@@ -349,15 +270,16 @@
         </tr>
         <tr>
           <th><label for="number">Guest Count:</label></th>
-          <td><input type="number" id="number" name="seats" min="1" required /></td>
+          <td><input type="number" id="number" name="seats" min="1" max="25" placeholder="Number of guests" required /></td>
         </tr>
         <tr>
           <th><label for="date">Dine in Date:</label></th>
           <td><input type="date" id="date" required /></td>
         </tr>
       </table>
-      <button type="submit">BOOK</button>
+      <button type="submit">BOOK TABLE</button>
     </form>
+    <div style="clear: both;"></div>
   </div>
 
   <!-- Popup -->
