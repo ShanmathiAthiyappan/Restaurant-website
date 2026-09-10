@@ -199,6 +199,7 @@ h2{
 
 .dish{
     margin-top: 30px;
+    padding-top: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -207,8 +208,8 @@ h2{
 }
 
 .dish img{
-    height: 95px;
-    width: 95px;
+    height: 85px;
+    width: 85px;
     border-radius: 50%;
     margin-bottom: 8px;
     padding: 4px;
@@ -217,7 +218,7 @@ h2{
 
 .dish img:hover{
     background-color: #c30062;
-    transition: transform 0.2s ease-in-out;    
+    transition: transform 0.5s ease-in-out;    
     transform: scale(1.08);
 }
 
@@ -226,7 +227,7 @@ h2{
     flex-direction: column;
     align-items: center;
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(18px);
     transition: opacity 0.8s ease-in-out, transform 0.8s ease-out;
     width: 120px;
 }
@@ -529,27 +530,143 @@ h2{
 }
 
 /*------------------------------- Appetizers, Drinks, Dessert, Street food, Fusion bites ------------------------------- */
-.Checkshops {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
-    text-align: left;
+/*------------------------------- SHOP & MENU PAGES (Appetizers, Drinks, Dessert, Street food, Fusion bites) ------------------------------- */
+.shop-page-wrapper {
+  background: #fafafa;
+  min-height: 100vh;
+  padding-bottom: 90px;
 }
 
-.Checkshops h2 {
-    font-size: 45px;
-    color: #c30062 !important;
-    margin-bottom: 25px;
+/* Back navigation bar */
+.shop-nav {
+  padding: 18px 40px;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 99;
 }
 
-.Checkshops h3 {
-    color: #000050;
-    margin-top: 25px;
+.back-btn {
+  text-decoration: none;
+  color: #191970;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s ease;
 }
 
-.Checkshops ul {
-    margin-left: 20px;
-    line-height: 28px;
+.back-btn:hover {
+  color: #FF007F;
+}
+
+.shop-container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.shop-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.shop-header h2 {
+  font-size: 46px;
+  color: #c30062 !important;
+  font-family: "Merienda", cursive;
+  text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.12);
+  margin-bottom: 10px;
+}
+
+.shop-header p {
+  color: #666;
+  font-size: 18px;
+}
+
+/* Category header */
+.menu-category-title {
+  font-size: 26px;
+  color: #191970;
+  font-family: "Playfair Display", serif;
+  margin: 40px 0 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 2px solid #ffd1e4;
+  padding-bottom: 8px;
+  text-align: left;
+}
+
+/* Responsive Dish Cards Grid */
+.dish-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.dish-item-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f0f0f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dish-item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 0, 127, 0.12);
+  border-color: #ffb8d9;
+}
+
+.dish-item-card h4 {
+  font-size: 18px;
+  color: #000050;
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-family: "Philosopher", sans-serif;
+}
+
+.dish-item-card p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.card-tag {
+  align-self: flex-start;
+  font-size: 11px;
+  background-color: #ffe6f2;
+  color: #c30062;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  .shop-header h2 {
+    font-size: 34px;
+  }
+  .dish-grid {
+    grid-template-columns: 1fr;
+  }
+  .shop-nav {
+    padding: 15px 20px;
+  }
 }
 
 /*-------------------------------------------------- FOOTER --------------------------------------------------*/
