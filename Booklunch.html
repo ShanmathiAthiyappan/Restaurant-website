@@ -3,293 +3,440 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Book Lunch Table</title>
+  <title>Book Lunch Table - Sizzloom</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
   <style>
-    body{
-      text-align: center;
+    body {
       font-family: "Philosopher", sans-serif;
-      background: #fdfdfd;
-      padding: 20px 0 50px 0;
-    }
-
-    h1{
-      padding-bottom: 25px;
-      color: #191970;
-      font-family: "Merienda", cursive;
-      text-shadow: 2px 4px 6px #bfbfbf;
-    }
-
-    .tablebooking {
-      max-width: 1100px;
-      margin: 0 auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-    }
-
-    .book-btn .btn {
-      width: 140px;
-      padding: 8px 0px;
-      background-color: #f1f1f1;
-      font-weight: bold;
-      border: 1px solid #ccc;
-    }
-
-    .book-btn .btn:hover, .book-btn .btn:active {
-      background-color: darkgray;
-      border-bottom: 3px solid #c30062;
-    }
-
-    .bookingdetails {
-      float: left;
-      width: 50%;
-      border-right: 1px solid #ddd;
-      padding-right: 20px;
-    }
-
-    .overview {
+      background: linear-gradient(135deg, #fff5f8 0%, #f0f4ff 100%);
+      min-height: 100vh;
       display: flex;
-      margin-top: 20px;
-      text-align: left;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 15px 60px;
     }
 
-    .overview .details {
-      padding: 10px;
-      width: 50%;
-    }
-
-    .overview .details a{
-      text-decoration: none;
-      color: #191970;
-      font-weight: bold;
-    }
-
-    .overview .details h4 {
-      color: #000050;
-      font-size: 18px;
-      margin-top: 10px;
-    }
-
-    .menu-list {
-      display: none;
-      margin-top: 20px;
-      text-align: left;
-      padding-left: 20px;
-    }
-
-    .menu-list .details h4{
-      font-size: 24px;
-      color: #000050;
-    }
-
-    .menu-list li{
-      list-style-type: square;
-      margin-bottom: 4px;
-    }
-
-    .bookform {
-      float: right;
-      width: 45%;
-      padding-left: 20px;
-    }
-
-    .bookform table {
+    .booking-wrapper {
+      max-width: 1050px;
       width: 100%;
-      margin-top: 10px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 80, 0.08);
+      overflow: hidden;
+      border: 1px solid #ffeef5;
     }
 
-    .bookform table th {
-      text-align: left;
-      padding: 12px 0px;
-      color: #000050;
+    .booking-header {
+      background: #000050;
+      color: #ffffff;
+      padding: 24px;
+      text-align: center;
+      position: relative;
+    }
+
+    .booking-header h1 {
+      font-family: "Merienda", cursive;
+      font-size: 32px;
+      margin: 0;
+      color: #ffffff;
+    }
+
+    .booking-header p {
+      margin: 5px 0 0;
+      color: #ff99cc;
       font-size: 15px;
     }
 
-    .bookform input, select {
-      width: 100%;
-      padding: 6px 10px;
-      height: 38px;
-      border: 1px solid #aaa;
-      border-radius: 6px;
-      box-sizing: border-box;
+    .back-home {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 6px 14px;
+      border-radius: 20px;
+      transition: 0.2s;
     }
 
-    .bookform button {
-      cursor: pointer;
-      height: 42px;
-      width: 100%;
-      margin-top: 20px;
-      border-radius: 6px;
-      background-color: #000050;
-      color: white;
-      letter-spacing: 3px;
+    .back-home:hover {
+      background: #FF007F;
+      color: #ffffff;
+    }
+
+    .booking-body {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 35px;
+      gap: 30px;
+    }
+
+    /* Left Details Section */
+    .details-pane {
+      flex: 1;
+      min-width: 320px;
+      background: #fafbff;
+      border-radius: 15px;
+      padding: 24px;
+      border: 1px solid #eef2ff;
+    }
+
+    /* Pure CSS Tab Toggle (No JavaScript) */
+    .tab-radio {
+      display: none;
+    }
+
+    .tab-nav {
+      display: flex;
+      background: #e8ecf8;
+      border-radius: 10px;
+      padding: 4px;
+      margin-bottom: 20px;
+    }
+
+    .tab-label {
+      flex: 1;
+      text-align: center;
+      padding: 8px 12px;
       font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      color: #555;
+      margin: 0;
+      transition: all 0.2s ease;
+    }
+
+    #tab1:checked ~ .tab-nav label[for="tab1"],
+    #tab2:checked ~ .tab-nav label[for="tab2"] {
+      background: #ffffff;
+      color: #000050;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .tab-content-overview,
+    .tab-content-menu {
+      display: none;
+    }
+
+    #tab1:checked ~ .tab-content-overview {
+      display: block;
+    }
+
+    #tab2:checked ~ .tab-content-menu {
+      display: block;
+    }
+
+    .info-card {
+      margin-bottom: 16px;
+    }
+
+    .info-card h4 {
+      font-size: 15px;
+      font-weight: bold;
+      color: #FF007F;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .info-card p, .info-card a {
+      font-size: 14.5px;
+      color: #333;
+      margin: 0;
+      text-decoration: none;
+      line-height: 1.5;
+    }
+
+    .tab-content-menu h5 {
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 14px;
+      margin-bottom: 6px;
+    }
+
+    .tab-content-menu ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .tab-content-menu li {
+      font-size: 14px;
+      color: #444;
+      padding: 3px 0;
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .tab-content-menu li::before {
+      content: "•";
+      color: #FF007F;
+      font-weight: bold;
+      font-size: 18px;
+      position: absolute;
+      left: 0;
+      top: -2px;
+    }
+
+    /* Right Form Section */
+    .form-pane {
+      flex: 1.1;
+      min-width: 320px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: bold;
+      color: #000050;
+      margin-bottom: 6px;
+    }
+
+    .form-group input, .form-group select {
+      width: 100%;
+      height: 42px;
+      border-radius: 8px;
+      border: 1px solid #ccd4e0;
+      padding: 8px 14px;
+      font-size: 14.5px;
+      background: #ffffff;
+      outline: none;
+      transition: border 0.2s, box-shadow 0.2s;
+    }
+
+    .form-group input:focus, .form-group select:focus {
+      border-color: #FF007F;
+      box-shadow: 0 0 0 3px rgba(255, 0, 127, 0.12);
+    }
+
+    .submit-btn {
+      width: 100%;
+      height: 46px;
+      background: #FF007F;
+      color: #ffffff;
       border: none;
-      transition: all 0.3s ease;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(255, 0, 127, 0.3);
+      transition: background 0.2s, transform 0.1s;
+      margin-top: 10px;
     }
 
-    .bookform button:hover {
-      background-color: #c30062;
+    .submit-btn:hover {
+      background: #e00070;
+      transform: translateY(-1px);
     }
 
-    @media screen and (max-width: 900px) {
-      .bookingdetails, .bookform {
-        float: none;
-        width: 100%;
-        border: none;
-        padding: 0;
-      }
-      .overview {
-        flex-direction: column;
-      }
-      .overview .details {
-        width: 100%;
-      }
-    }
-
-    /* POPUP STYLES */
-    #popup {
+    /* Pure CSS Modal Popup via CSS :target (Zero JavaScript) */
+    .css-popup {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.5);
       display: none;
       justify-content: center;
       align-items: center;
-      z-index: 999;
+      z-index: 9999;
+      padding: 20px;
+    }
+
+    .css-popup:target {
+      display: flex;
     }
 
     .popup-box {
-      background-color: white;
+      background: #ffffff;
       padding: 30px;
-      border-radius: 8px;
-      box-shadow: 2px 2px 10px #444;
+      border-radius: 16px;
       text-align: center;
-      max-width: 400px;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .popup-box i {
+      font-size: 48px;
+      color: #28a745;
+      margin-bottom: 12px;
     }
 
     .popup-box p {
+      font-size: 16px;
+      color: #333;
       margin-bottom: 20px;
-      font-size: 18px;
     }
 
-    .popup-box button {
-      padding: 8px 25px;
-      background-color: #c30062;
+    .popup-box .ok-btn {
+      display: inline-block;
+      text-decoration: none;
+      background: #000050;
       color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
+      padding: 8px 30px;
+      border-radius: 20px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .popup-box .ok-btn:hover {
+      background: #FF007F;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .back-home {
+        position: static;
+        transform: none;
+        display: inline-flex;
+        margin-bottom: 10px;
+      }
+      .booking-body {
+        padding: 20px;
+      }
     }
   </style>
-
 </head>
 <body>
-  <div class="tablebooking">
-    <h1>Book your table for Lunch</h1>
 
-    <div class="bookingdetails">
-      <div class="book-btn btn-group">
-        <button type="button" class="btn btn3">Overview</button>
-        <button type="button" class="btn btn4">Menu</button>
-      </div>
+  <div class="booking-wrapper">
+    <div class="booking-header">
+      <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Home</a>
+      <h1>Lunch Table Reservation</h1>
+      <p>Enjoy a royal midday banquet with family & friends</p>
+    </div>
 
-      <div class="overview">
-        <div class="details">
-          <h4>Phone Number</h4>
-          <p><a href="tel:+919638527410">+91 9638527410</a></p>
-          <h4>Cuisines</h4>
-          <p>Biryani, Thali, Butter Chicken with Naan, Dal Tadka</p>
-          <h4>Average Cost</h4>
-          <p>₹350 for two people (approx.)</p>
-          <h4>Famous for</h4>
-          <p>Live Music Lunch, Royal Thali Platters, Garden View Dining, Executive Lunch Combos</p>
+    <div class="booking-body">
+      <!-- Left: Overview & Menu (Pure CSS Tabs) -->
+      <div class="details-pane">
+        <input type="radio" name="tab" id="tab1" class="tab-radio" checked>
+        <input type="radio" name="tab" id="tab2" class="tab-radio">
+
+        <div class="tab-nav">
+          <label for="tab1" class="tab-label">Overview</label>
+          <label for="tab2" class="tab-label">Menu</label>
         </div>
 
-        <div class="details">
-          <h4>Openings hours</h4>
-          <p>Mon - Sat: 7:00 AM - 10:00 PM <br /> Sun: 8:00 AM - 9:00 PM</p>
-          <h4>Address</h4>
-          <p>Hussain Sagar, Khairtabad, Hyderabad, Telangana - 500003</p>
-        </div>
-      </div>
+        <!-- Overview Content -->
+        <div class="tab-content-overview">
+          <div class="info-card">
+            <h4><i class="fas fa-phone-alt"></i> Reservations Desk</h4>
+            <p><a href="tel:+919638527410">+91 96385 27410</a></p>
+          </div>
 
-      <div class="menu-list">
-        <div class="details">
-          <h4>Afternoon Feast</h4>
-          <h6 class="text-success mt-3">Pure Vegetarian:</h6>
+          <div class="info-card">
+            <h4><i class="fas fa-utensils"></i> Lunch Speciality</h4>
+            <p>South & North Indian Thalis, Paneer Butter Masala, Hyderabadi Dum Biryani</p>
+          </div>
+
+          <div class="info-card">
+            <h4><i class="fas fa-wallet"></i> Average Cost</h4>
+            <p>₹350 for two guests (approx.)</p>
+          </div>
+
+          <div class="info-card">
+            <h4><i class="fas fa-clock"></i> Lunch Timings</h4>
+            <p>Daily: 12:30 PM – 4:00 PM</p>
+          </div>
+
+          <div class="info-card">
+            <h4><i class="fas fa-map-marker-alt"></i> Location</h4>
+            <p>Hussain Sagar, Khairtabad, Hyderabad, Telangana - 500003</p>
+          </div>
+        </div>
+
+        <!-- Menu Content -->
+        <div class="tab-content-menu">
+          <h5 class="text-success"><i class="fas fa-seedling"></i> Vegetarian Delicacies</h5>
           <ul>
-            <li>Traditional South Indian Thali</li>
-            <li>Rich North Indian Thali</li>
-            <li>Homestyle Rajma Chawal</li>
-            <li>Paneer Butter Masala with Butter Naan</li>
-            <li>Hyderabadi Veg Dum Biryani with Raita</li>
+            <li>Grand South Indian Unlimited Thali</li>
+            <li>North Indian Shahi Thali</li>
+            <li>Hyderabadi Veg Dum Biryani with Mirchi Salan</li>
+            <li>Paneer Butter Masala with Butter Garlic Naan</li>
             <li>Dal Tadka with Fragrant Jeera Rice</li>
           </ul>
-          <h6 class="text-danger mt-3">Non-Veg Specials:</h6>
+
+          <h5 class="text-danger mt-3"><i class="fas fa-drumstick-bite"></i> Non-Vegetarian Feast</h5>
           <ul>
-            <li>Coastal Chicken Curry with Steamed Rice</li>
-            <li>Crisp Fish Fry with Tangy Lemon Rice</li>
-            <li>Slow-cooked Mutton Curry with Rice</li>
-            <li>Spicy Andhra Chicken Roast</li>
-            <li>Clay Oven Tandoori Chicken with Naan</li>
+            <li>Coastal Style Chicken Curry with Rice</li>
+            <li>Crispy Fish Fry with Lemon Rice</li>
+            <li>Spicy Mutton Curry with Steamed Basmati</li>
+            <li>Tandoori Chicken Platter</li>
           </ul>
         </div>
       </div>
-    </div>
 
-    <form class="bookform">
-      <table>
-        <tr>
-          <th><label for="fname">Full Name:</label></th>
-          <td><input type="text" id="fname" name="fname" placeholder="Your name" required /></td>
-        </tr>
-        <tr>
-          <th><label for="email">Email Address:</label></th>
-          <td><input type="email" id="email" name="email" placeholder="you@email.com" required /></td>
-        </tr>
-        <tr>
-          <th><label for="phone">Phone Number:</label></th>
-          <td><input type="tel" id="phone" name="phone" placeholder="+91 00000 00000" required /></td>
-        </tr>
-        <tr>
-          <th><label for="menu">Menu Type:</label></th>
-          <td>
+      <!-- Right: Booking Form -->
+      <div class="form-pane">
+        <form action="#lunch-booking-success" method="get">
+          <div class="form-group">
+            <label for="fname">Your Full Name</label>
+            <input type="text" id="fname" name="fname" placeholder="John Doe" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required />
+          </div>
+
+          <div class="form-group">
+            <label for="menu">Meal Preference</label>
             <select id="menu" name="menu" required>
-              <option value="">Choose preference</option>
-              <option value="veg">Pure Veg</option>
-              <option value="non-veg">Non-Veg</option>
-              <option value="both">Both</option>
+              <option value="" disabled selected>Select dining option</option>
+              <option value="veg">Vegetarian</option>
+              <option value="non-veg">Non-Vegetarian</option>
+              <option value="both">Both (Mixed Group)</option>
             </select>
-          </td>
-        </tr>
-        <tr>
-          <th><label for="number">Guest Count:</label></th>
-          <td><input type="number" id="number" name="seats" min="1" max="25" placeholder="Number of guests" required /></td>
-        </tr>
-        <tr>
-          <th><label for="date">Dine in Date:</label></th>
-          <td><input type="date" id="date" required /></td>
-        </tr>
-      </table>
-      <button type="submit">BOOK TABLE</button>
-    </form>
-    <div style="clear: both;"></div>
-  </div>
+          </div>
 
-  <!-- Popup -->
-  <div id="popup">
-    <div class="popup-box">
-      <p id="popupMessage">Your table has been booked successfully!</p>
-      <button id="okBtn">OK</button>
+          <div class="row">
+            <div class="col-6 form-group">
+              <label for="number">Guests</label>
+              <input type="number" id="number" name="seats" min="1" max="25" placeholder="2" required />
+            </div>
+            <div class="col-6 form-group">
+              <label for="date">Dine-in Date</label>
+              <input type="date" id="date" required />
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn">CONFIRM LUNCH TABLE</button>
+        </form>
+      </div>
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <!-- Pure CSS Modal Popup (Zero JS) -->
+  <div id="lunch-booking-success" class="css-popup">
+    <div class="popup-box">
+      <i class="fas fa-check-circle"></i>
+      <p><strong>Success!</strong> Your lunch table has been booked successfully at Sizzloom!</p>
+      <a href="Booklunch.html" class="ok-btn">OK</a>
+    </div>
+  </div>
+
 </body>
 </html>
