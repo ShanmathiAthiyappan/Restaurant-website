@@ -43,6 +43,7 @@
         margin: 8px 0;
         border: 1px solid #ccc;
         border-radius: 5px;
+        box-sizing: border-box;
     }
     button {
         width: 100%;
@@ -77,11 +78,11 @@
     <input type="text" id="username" placeholder="Username" required>
     <input type="password" id="password" placeholder="Password" required>
     <div id="extra-field" style="display: none;">
-        <input type="email" id="email" placeholder="Email" required>
+        <input type="email" id="email" placeholder="Email">
     </div>
     <button onclick="submitForm()">Submit</button>
     <div class="switch">
-        <span id="switch-text">Don't have an account? <a href="#" onclick="toggleForm()">Sign Up</a></span>
+        <span id="switch-text">Don't have an account? <a href="javascript:void(0)" onclick="toggleForm()">Sign Up</a></span>
     </div>
 </div>
 
@@ -94,15 +95,16 @@
         document.getElementById('extra-field').style.display = isSignUp ? 'block' : 'none';
         document.getElementById('switch-text').innerHTML = 
             isSignUp 
-            ? 'Already have an account? <a href="#" onclick="toggleForm()">Sign In</a>' 
-            : 'Don\'t have an account? <a href="#" onclick="toggleForm()">Sign Up</a>';
+            ? 'Already have an account? <a href="javascript:void(0)" onclick="toggleForm()">Sign In</a>' 
+            : 'Don\'t have an account? <a href="javascript:void(0)" onclick="toggleForm()">Sign Up</a>';
     }
 
     function submitForm() {
         const username = document.getElementById('username').value.trim();
+        const password = document.getElementById('password').value.trim();
         
-        if (username === "") {
-            alert("Please enter your username.");
+        if (username === "" || password === "") {
+            alert("Please enter your username and password.");
             return;
         }
 
@@ -113,4 +115,3 @@
 
 </body>
 </html>
-

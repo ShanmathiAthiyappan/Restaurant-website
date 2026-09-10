@@ -35,7 +35,7 @@
       border-bottom: 2px solid #c30062;
     }
 
-    .book-btn .btn:onclick {
+    .book-btn .btn:active {
       background-color: darkgray;
       border-bottom: 2px solid #c30062;
     }
@@ -101,12 +101,8 @@
     .bookform input, select {
       width: 270px;
       margin-left: 10px;
-      height: 24px;
+      height: 28px;
       border: 2px solid black;
-    }
-
-    .bookform input:hover, select:hover {
-      height: 25px;
     }
 
     .bookform button {
@@ -344,7 +340,7 @@
           <th><label for="menu">Menu:</label></th>
           <td>
             <select id="menu" name="menu" required>
-              <option value=""></option>
+              <option value="" disabled selected>Select Menu</option>
               <option value="veg">Veg</option>
               <option value="non-veg">Non-Veg</option>
               <option value="both">Both</option>
@@ -353,10 +349,10 @@
         </tr>
         <tr>
           <th><label for="number">Guest Count:</label></th>
-          <td><input type="number" id="number" name="seats" required /></td>
+          <td><input type="number" id="number" name="seats" min="1" required /></td>
         </tr>
         <tr>
-          <th><label>Dine in Date:</label></th>
+          <th><label for="date">Dine in Date:</label></th>
           <td><input type="date" id="date" required /></td>
         </tr>
       </table>
@@ -372,42 +368,6 @@
     </div>
   </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const menuBtn = document.querySelector(".btn4");
-      const overviewBtn = document.querySelector(".btn3");
-      const overview = document.querySelector(".overview");
-      const menu = document.querySelector(".menu-list");
-
-      menuBtn.addEventListener("click", () => {
-        overview.style.display = "none";
-        menu.style.display = "block";
-      });
-
-      overviewBtn.addEventListener("click", () => {
-        menu.style.display = "none";
-        overview.style.display = "flex";
-      });
-
-      const bookBtn = document.querySelector(".bookform button");
-      const popup = document.getElementById("popup");
-      const okBtn = document.getElementById("okBtn");
-      const popupMessage = document.getElementById("popupMessage");
-      const form = document.querySelector(".bookform");
-
-      bookBtn.addEventListener("click", function (e) {
-        e.preventDefault();
-        const name = document.getElementById("fname").value.trim();
-        const guests = document.getElementById("number").value.trim();
-        popupMessage.innerHTML = `Hi <strong>${name || "Guest"}</strong>, your table for <strong>${guests || "0"}</strong> guest(s) has been booked successfully!`;
-        popup.style.display = "flex";
-      });
-
-      okBtn.addEventListener("click", function () {
-        popup.style.display = "none";
-        form.reset();
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

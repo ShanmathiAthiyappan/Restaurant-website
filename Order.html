@@ -12,6 +12,7 @@
       font-family: "Philosopher", sans-serif;
       margin: 0;
       padding: 0;
+      background-color: #fcfcfc;
     }
 
     h1{
@@ -35,11 +36,13 @@
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+      box-sizing: border-box;
     }
 
     label {
       display: block;
       margin-top: 10px;
+      text-align: left;
     }
 
     input, select, textarea {
@@ -48,6 +51,7 @@
       margin-top: 4px;
       border: 1px solid #ccc;
       border-radius: 4px;
+      box-sizing: border-box;
     }
 
     textarea {
@@ -76,7 +80,11 @@
       align-items: center;
     }
 
-    .order-items select, .order-items input {
+    .order-items select {
+      flex: 2;
+    }
+
+    .order-items input {
       flex: 1;
     }
 
@@ -96,11 +104,17 @@
     }
 
     .remove-btn {
+      background: #dc3545;
       color: white;
-      padding: 5px 10px;
+      border: none;
+      padding: 8px 12px;
       cursor: pointer;
       border-radius: 4px;
       font-size: 14px;
+    }
+
+    .remove-btn:hover {
+      background: #bd2130;
     }
 
     .total {
@@ -164,7 +178,10 @@
 
     @media screen and (max-width: 540px){
       form{
-        max-width: 750px;
+        margin: 10px;
+      }
+      .order-items {
+        flex-direction: column;
       }
     }
 
@@ -200,9 +217,9 @@
       <div id="orderList">
         <div class="order-items">
           <select name="item[]" class="itemSelect" required>
-          <option data-price="0">Select</option>
+          <option value="" data-price="0">-- Select Item --</option>
               <!-- Breakfast Menu -->
-          <option disabled>Breakfast Menu</option>
+          <option disabled>-- Breakfast Menu --</option>
           <option value="Masala Dosa" data-price="80">Masala Dosa</option>
           <option value="Idli with Sambar" data-price="70">Idli with Sambar</option>
           <option value="Aloo Paratha" data-price="90">Aloo Paratha</option>
@@ -222,7 +239,7 @@
           <option value="Egg Appam" data-price="90">Egg Appam</option>
       
               <!-- Lunch Menu -->
-          <option disabled>Lunch Menu</option>
+          <option disabled>-- Lunch Menu --</option>
           <option value="South Indian Thali" data-price="120">South Indian Thali</option>
           <option value="North Indian Thali" data-price="130">North Indian Thali</option>
           <option value="Rajma Chawal" data-price="100">Rajma Chawal</option>
@@ -242,7 +259,7 @@
           <option value="Andhra Spicy Chicken with Rice" data-price="190">Andhra Spicy Chicken with Rice</option>
       
           <!-- Dinner Menu -->
-          <option disabled>Dinner Menu</option>
+          <option disabled>-- Dinner Menu --</option>
           <option value="Butter Naan with Kadai Paneer" data-price="160">Butter Naan with Kadai Paneer</option>
           <option value="Palak Paneer with Garlic Naan" data-price="160">Palak Paneer with Garlic Naan</option>
           <option value="Veg Kurma with Appam" data-price="130">Veg Kurma with Appam</option>
@@ -260,11 +277,12 @@
           <option value="Fish Curry with Steamed Rice" data-price="190">Fish Curry with Steamed Rice</option>
           <option value="Butter Chicken with Naan" data-price="200">Butter Chicken with Naan</option>
           <option value="Hyderabadi Mutton Biryani" data-price="220">Hyderabadi Mutton Biryani</option>
-
+          </select>
           <input type="number" name="qty[]" class="itemQty" value="1" min="1">
+          <button type="button" class="remove-btn" onclick="removeItem(this)">Remove</button>
         </div>
       </div>
-      <button type="button" class="btn" onclick="addItem()">+ Add Item</button>
+      <button type="button" class="btn mt-2" onclick="addItem()">+ Add Item</button>
       <label>Special Instructions</label>
       <textarea name="instructions" rows="3"></textarea>
       <label>Add-ons / Extras</label>
@@ -306,8 +324,8 @@
     <!-- Confirmation -->
     <div class="section">
       <h3>Confirmation & Terms</h3>
-      <label><input type="checkbox" required> I agree to the Terms & Conditions</label>
-      <label><input type="checkbox"> I agree to receive updates via WhatsApp/SMS</label>
+      <label><input type="checkbox" required style="width:auto;"> I agree to the Terms & Conditions</label>
+      <label><input type="checkbox" style="width:auto;"> I agree to receive updates via WhatsApp/SMS</label>
     </div>
 
     <button type="submit" class="btn">Place Order</button>
@@ -319,7 +337,7 @@
       <h3>Order Placed Successfully!</h3>
       <p id="popupCustomer"></p>
       <ul id="popupItems"></ul>
-      <p><strong>Total: ₹<span id="popupTotal"></span></strong></p>
+      <p><strong>Total: ₹<span id="popupTotal">0</span></strong></p>
       <button onclick="closePopup()">OK</button>
     </div>
   </div>
@@ -407,8 +425,9 @@
     let total = 0;
     document.querySelectorAll(".order-items").forEach(item => {
       const select = item.querySelector(".itemSelect");
-      const qty = item.querySelector(".itemQty").value;
-      const price = parseInt(select.selectedOptions[0].getAttribute("data-price"));
+      const qty = parseInt(item.querySelector(".itemQty").value) || 0;
+      const selectedOption = select.selectedOptions[0];
+      const price = selectedOption ? parseInt(selectedOption.getAttribute("data-price") || 0) : 0;
       total += price * qty;
     });
     document.getElementById("totalAmount").innerText = total;
@@ -432,9 +451,10 @@
 
     itemList.forEach(row => {
       const select = row.querySelector(".itemSelect");
-      const qty = row.querySelector(".itemQty").value;
-      const price = parseInt(select.selectedOptions[0].getAttribute("data-price"));
-      if (select.value) {
+      const qty = parseInt(row.querySelector(".itemQty").value) || 0;
+      const selectedOption = select.selectedOptions[0];
+      const price = selectedOption ? parseInt(selectedOption.getAttribute("data-price") || 0) : 0;
+      if (select.value && price > 0) {
         const listItem = document.createElement("li");
         listItem.textContent = `${select.value} x ${qty} = ₹${price * qty}`;
         document.getElementById("popupItems").appendChild(listItem);
@@ -450,7 +470,7 @@
   function closePopup() {
     document.getElementById("orderPopup").style.display = "none";
     document.getElementById("orderForm").reset();
-    document.getElementById("totalAmount").innerText = 0;
+    document.getElementById("totalAmount").innerText = "0";
   }
   </script>
 

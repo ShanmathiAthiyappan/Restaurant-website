@@ -19,7 +19,7 @@
 
 </head> 
 
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="80">
 
     <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
@@ -27,7 +27,7 @@
       <img src="./Resurantlogo.jpg" alt="Restaurant Logo" width="60" height="60">
     </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -39,7 +39,7 @@
 
         <!-- Dropdown starts -->
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-bs-toggle="dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-bs-toggle="dropdown" aria-expanded="false">
           Reserve table
         </a>
       <div class="dropdown-menu shadow">
@@ -51,7 +51,7 @@
         <!-- Dropdown ends -->
 
         <li class="nav-item"><a class="nav-link" href="#six">Our Culture</a></li>
-        <li class="nav-item"><a class="nav-link btn px-3" href="./Order online.html" target="_blank">ORDER ONLINE</a></li>
+        <li class="nav-item"><a class="nav-link btn px-3" href="./Order.html" target="_blank">ORDER ONLINE</a></li>
       </ul>
     </div>
   </div>
@@ -78,144 +78,184 @@
         <img src="./intro13.jpg" alt="" class="img1">
         <img src="./intro14.avif" alt="" class="img2">
         <img src="./intro15.jpg" alt="" class="img1">
+        <!-- Cloned items for seamless continuous looping -->
+        <img src="./intro1.jpg" alt="" class="img1">
+        <img src="./intro2.avif" alt="" class="img2">
+        <img src="./intro3.jpg" alt="" class="img1">
+        <img src="./intro4.jpg" alt="" class="img2">
+        <img src="./intro5.jpg" alt="" class="img1">
+        <img src="./intro6.jpg" alt="" class="img2">
+        <img src="./intro7.webp" alt="" class="img1">
+        <img src="./intro8.jpg" alt="" class="img2">
+        <img src="./intro9.jpg" alt="" class="img1">
+        <img src="./intro10.jpg" alt="" class="img2">
+        <img src="./intro11.avif" alt="" class="img1">
+        <img src="./intro12.jpg" alt="" class="img2">
+        <img src="./intro13.jpg" alt="" class="img1">
+        <img src="./intro14.avif" alt="" class="img2">
+        <img src="./intro15.jpg" alt="" class="img1">
       </div>
-    </div>                                                                                    <hr>
+    </div>                                                                                                <hr>
 
     <div id="three">
             <h2>Check our Shop</h2>
         <div class="dish">
             <div class="img3">
-                <a href="./Appetizers.html"><img src="./Appetizers.jpg" alt=""></a> 
+                <a href="./Appetizers.html"><img src="./Appetizers.jpg" alt="Appetizers"></a> 
                 <a href="./Appetizers.html">Appetizers</a>
             </div>
             <div class="img3">
-                <a href="./Drinks.html"><img src="./Drinks.jpg" alt=""></a> 
+                <a href="./Drinks.html"><img src="./Drinks.jpg" alt="Drinks"></a> 
                 <a href="./Drinks.html">Drinks</a>
             </div>
             <div class="img3">
-                <a href="./Dessert.html"><img src="./Dessert.jpg" alt=""></a> 
+                <a href="./Dessert.html"><img src="./Dessert.jpg" alt="Dessert"></a> 
                 <a href="./Dessert.html">Dessert</a>
             </div>
             <div class="img3">
-                <a href="./Street food.html"><img src="./Street Food.jpg" alt=""></a> 
+                <a href="./Street food.html"><img src="./Street Food.jpg" alt="Street Food"></a> 
                 <a href="./Street food.html">Street Food</a>
             </div>
             <div class="img3">
-                <a href="./Fusion Bites.html"><img src="./Fusion Bites.webp" alt=""></a> 
+                <a href="./Fusion Bites.html"><img src="./Fusion Bites.webp" alt="Fusion Bites"></a> 
                 <a href="./Fusion Bites.html">Fusion Bites</a>
             </div>
             </div>
-    </div>                                                                                    <hr>
+    </div>                                                                                                <hr>
     
     <div id="four">
         <h2>Organic Recipes</h2><br>
         <div class="Recipes">
             <div class="Recipe">
-                <img src="./moong dal khichadi.jpg" alt="">
+                <img src="./moong dal khichadi.jpg" alt="Moong Dal Khichdi">
                 <p class="caption"><b>Moong Dal Khichdi</b></p>
-                <p style="color: black;"><b>Ingredients:</b>
+                <div style="color: black;"><b>Ingredients:</b>
+                  <ul>
                     <li>Moong dal</li>
                     <li>Rice</li>
                     <li>Ginger</li>
                     <li>Ghee</li>
-                    <li>Turmeric</li></p>
+                    <li>Turmeric</li>
+                  </ul>
+                </div>
             </div>
             <div class="Recipe">
-                <img src="./Methi thepla.jpg" alt="">
+                <img src="./Methi thepla.jpg" alt="Methi Thepla">
                 <p class="caption"><b>Methi Thepla</b></p>
-                <p style="color: black;"><b>Ingredients:</b>
+                <div style="color: black;"><b>Ingredients:</b>
+                  <ul>
                     <li>Fresh methi (fenugreek leaves)</li>
                     <li>Whole wheat flour</li>
                     <li>Curd</li>
-                    <li>Carom seeds (ajwain)</li></p>
+                    <li>Carom seeds (ajwain)</li>
+                  </ul>
+                </div>
             </div>
             <div class="Recipe">
-                <img src="./whole wheat veggie pizza.jpg" alt="">
+                <img src="./whole wheat veggie pizza.jpg" alt="Whole Wheat Veggie Pizza">
                 <p class="caption"><b>Organic Whole Wheat Veggie Pizza</b></p>
-                <p style="color: black;"><b>Ingredients:</b>
-                  <li>Whole wheat pizza base</li>
-                  <li>Organic Mushrooms</li>
-                  <li>Spinach</li>
-                  <li>Olive oil</li></p>
+                <div style="color: black;"><b>Ingredients:</b>
+                  <ul>
+                    <li>Whole wheat pizza base</li>
+                    <li>Organic Mushrooms</li>
+                    <li>Spinach</li>
+                    <li>Olive oil</li>
+                  </ul>
+                </div>
             </div>
             <div class="Recipe">
-                <img src="./vegetable coconut stew.jpg" alt="">
+                <img src="./vegetable coconut stew.jpg" alt="Vegetable Coconut Stew">
                 <p class="caption"><b>Vegetable Coconut Stew</b></p>
-                <p style="color: black;"><b>Ingredients:</b>
-                  <li>Coconut milk</li>
-                  <li>Carrot, beans, potatoes</li>
-                  <li>Curry leaves</li>
-                  <li>Coconut oil</li></p>
+                <div style="color: black;"><b>Ingredients:</b>
+                  <ul>
+                    <li>Coconut milk</li>
+                    <li>Carrot, beans, potatoes</li>
+                    <li>Curry leaves</li>
+                    <li>Coconut oil</li>
+                  </ul>
+                </div>
             </div>
             <div class="Recipe">
-                <img src="./Garlic Sauteed Greens.jpg" alt="">
+                <img src="./Garlic Sauteed Greens.jpg" alt="Garlic Sauteed Greens">
                 <p class="caption"><b>Garlic Sauteed Greens</b></p>
-                <p style="color: black;"><b>Ingredients:</b>
-                  <li>Fresh spinach/amaranth</li>
-                  <li>Garlic</li>
-                  <li>Sesame oil</li></p>
+                <div style="color: black;"><b>Ingredients:</b>
+                  <ul>
+                    <li>Fresh spinach/amaranth</li>
+                    <li>Garlic</li>
+                    <li>Sesame oil</li>
+                  </ul>
+                </div>
             </div>
             <div class="Recipe">
-                <img src="./tomato basil soup.jpg" alt="">
+                <img src="./tomato basil soup.jpg" alt="Tomato Basil Soup">
                 <p class="caption"><b>Tomato Basil Soup</b></p>
-                <p style="color: black;"><b>Ingredients:</b>
-                  <li>Tomatoes</li>
-                  <li>Vegetable broth</li>
-                  <li>Fresh basil</li>
-                  <li>Coconut cream</li>
-                  <li>Garlic</li></p>
+                <div style="color: black;"><b>Ingredients:</b>
+                  <ul>
+                    <li>Tomatoes</li>
+                    <li>Vegetable broth</li>
+                    <li>Fresh basil</li>
+                    <li>Coconut cream</li>
+                    <li>Garlic</li>
+                  </ul>
+                </div>
             </div>
             <div class="Recipe">
-                <img src="./tulsi ginger herbal tea.webp" alt="">
+                <img src="./tulsi ginger herbal tea.webp" alt="Tulsi Ginger Herbal Tea">
                 <p class="caption"><b>Tulsi Ginger Herbal Tea</b></p>
-                <p style="color: black;"><b>Ingredients:</b>
-                  <li>Tulsi leaves</li>
-                  <li>Fresh ginger</li>
-                  <li>Palm jaggery or honey</li></p>
+                <div style="color: black;"><b>Ingredients:</b>
+                  <ul>
+                    <li>Tulsi leaves</li>
+                    <li>Fresh ginger</li>
+                    <li>Palm jaggery or honey</li>
+                  </ul>
+                </div>
             </div>
             <div class="Recipe">
-                <img src="./ragi dosa.jpg" alt="">
+                <img src="./ragi dosa.jpg" alt="Ragi Dosa">
                 <p class="caption"><b>Ragi Dosa</b></p>
-                <p style="color: black;"><b>Ingredients:</b>
-                  <li>Ragi flour</li>
-                  <li>Rice flour</li>
-                  <li>Curd</li>
-                  <li>Cumin seeds</li></p>
+                <div style="color: black;"><b>Ingredients:</b>
+                  <ul>
+                    <li>Ragi flour</li>
+                    <li>Rice flour</li>
+                    <li>Curd</li>
+                    <li>Cumin seeds</li>
+                  </ul>
+                </div>
             </div>
         </div>
-    </div>                                                                                    <hr>
+    </div>                                                                                                <hr>
 
     <div id="five">
-  <div class="container text-center">
+  <div class="container d-block text-center">
     <div id="breakfast">
         <h2 class="menuhead">BreakFast Special Menu</h2>
     <div class="menu1">
       <!-- Repeat this column for each item -->
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./Idli with Sambar & Chutney.png" alt="food">
         <div class="food-title">Idli with Sambar & Chutney</div>
         <div class="food-price">₹60</div>
       </div>
 
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./Masala Dosa.png" alt="food">
         <div class="food-title">Masala Dosa</div>
         <div class="food-price">₹90</div>
       </div>
 
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./Pongal with Coconut Chutney.png" alt="food">
         <div class="food-title">Pongal with Coconut Chutney</div>
         <div class="food-price">₹70</div>
       </div>
 
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./Poori with Potato Masala.jpg" alt="food">
         <div class="food-title">Poori with Potato Masala</div>
         <div class="food-price">₹85</div>
       </div>
 
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./Aloo Paratha with Curd & Pickle.jpg" alt="food">
         <div class="food-title">Aloo Paratha with Curd & Pickle</div>
         <div class="food-price">₹100</div>
@@ -223,71 +263,71 @@
     </div>
 
     <div class="menu2">
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./Upma with Coconut Chutney.jpg" alt="food">
         <div class="food-title">Upma with Coconut Chutney</div>
         <div class="food-price">₹60</div>
       </div>
 
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./Bread Omelette.jpg" alt="food">
         <div class="food-title">Bread Omelette</div>
         <div class="food-price">₹80</div>
       </div>
 
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./Medu Vada with Sambar.jpg" alt="food">
         <div class="food-title">Medu Vada with Sambar</div>
         <div class="food-price">₹70</div>
       </div>
 
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./Chole Bhature.jpg" alt="food">
         <div class="food-title">Chole Bhature</div>
         <div class="food-price">₹110</div>
       </div>
 
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./Vegetable Sandwich with Tea.jpg" alt="food">
         <div class="food-title">Vegetable Sandwich with Tea</div>
         <div class="food-price">₹95</div>
       </div>
     </div>
 
-    <button class="book"><a href="Bookbreakfast.html">Book Table</a></button>
+    <a href="Bookbreakfast.html"><button class="book">Book Table</button></a>
     </div>
   </div>
 
-    <div class="container text-center">
+    <div class="container d-block text-center">
     <div id="lunch">
         <h2 class="menuhead">Lunch Special Menu</h2>
     <div class="menu1">
       <!-- Repeat this column for each item -->
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./South Indian Thali.jpg" alt="food">
         <div class="food-title">South Indian Thali</div>
         <div class="food-price">₹140</div>
       </div>
 
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./North Indian Thali.jpg" alt="food">
         <div class="food-title">North Indian Thali</div>
         <div class="food-price">₹170</div>
       </div>
 
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./Veg Biryani with Raita.jpg" alt="food">
         <div class="food-title">Veg Biryani with Raita</div>
         <div class="food-price">₹130</div>
       </div>
 
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./Paneer Butter Masala with Naan.jpg" alt="food">
         <div class="food-title">Paneer Butter Masala with Naan</div>
         <div class="food-price">₹180</div>
       </div>
 
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./Chicken Curry with Steamed Rice.jpg" alt="food">
         <div class="food-title">Chicken Curry with Steamed Rice</div>
         <div class="food-price">₹190</div>
@@ -295,70 +335,70 @@
     </div>
 
     <div class="menu2">
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./Rajma Chawal.jpg" alt="food">
         <div class="food-title">Rajma Chawal</div>
         <div class="food-price">₹110</div>
       </div>
 
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./Dal Tadka with Jeera Rice.jpg" alt="food">
         <div class="food-title">Dal Tadka with Jeera Rice</div>
         <div class="food-price">₹120</div>
       </div>
 
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./Fish Fry with Lemon Rice.jpg" alt="food">
         <div class="food-title">Fish Fry with Lemon Rice</div>
         <div class="food-price">₹210</div>
       </div>
 
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./Gobi Manchurian with Fried Rice.jpg" alt="food">
         <div class="food-title">Gobi Manchurian with Fried Rice</div>
         <div class="food-price">₹140</div>
       </div>
 
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./Veg Pulao with Boondi Raita.jpg" alt="food">
         <div class="food-title">Veg Pulao with Boondi Raita</div>
         <div class="food-price">₹125</div>
       </div>
     </div>
 
-    <button class="book"><a href="Booklunch.html">Book Table</a></button>
+    <a href="Booklunch.html"><button class="book">Book Table</button></a>
     </div>
   </div>
 
-    <div class="container text-center">
+    <div class="container d-block text-center">
     <div id="dinner">
         <h2 class="menuhead">Dinner Special Menu</h2>
     <div class="menu1">
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./Butter Naan with Kadai Paneer.jpg" alt="food">
         <div class="food-title">Butter Naan with Kadai Paneer</div>
         <div class="food-price">₹170</div>
       </div>
 
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./Chicken Tikka Masala with Roti.jpg" alt="food">
         <div class="food-title">Chicken Tikka Masala with Roti</div>
         <div class="food-price">₹200</div>
       </div>
 
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./Egg Curry with Lachha Paratha.jpg" alt="food">
         <div class="food-title">Egg Curry with Lachha Paratha</div>
         <div class="food-price">₹160</div>
       </div>
 
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./Veg Kurma with Appam.jpg" alt="food">
         <div class="food-title"> Veg Kurma with Appam</div>
         <div class="food-price">₹130</div>
       </div>
 
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./Palak Paneer with Garlic Naan.jpg" alt="food">
         <div class="food-title">Palak Paneer with Garlic Naan</div>
         <div class="food-price">₹170</div>
@@ -366,41 +406,41 @@
     </div>
 
     <div class="menu2">
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./Mutton Rogan Josh with Rice.jpg" alt="food">
         <div class="food-title">Mutton Rogan Josh with Rice</div>
         <div class="food-price">₹240</div>
       </div>
 
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./lemon rice with curd.jpg" alt="food">
         <div class="food-title">Lemon Rice with Curd</div>
         <div class="food-price">₹100</div>
       </div>
 
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./Tandoori Roti with Chana Masala (2).jpg" alt="food">
         <div class="food-title">Tandoori Roti with Chana Masala</div>
         <div class="food-price">₹120</div>
       </div>
 
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./Pesarattu with Coconut Chutney.jpg" alt="food">
         <div class="food-title">Pesarattu with Coconut Chutney</div>
         <div class="food-price">₹80</div>
       </div>
 
-      <div class="col food-card">
+      <div class="food-card">
         <img src="./Chicken Fried Rice with Gravy.jpg" alt="food">
         <div class="food-title">Chicken Fried Rice with Gravy</div>
         <div class="food-price">₹150</div>
       </div>
     </div>
 
-    <button class="book"><a href="Bookdinner.html">Book Table</a></button>
+    <a href="Bookdinner.html"><button class="book">Book Table</button></a>
     </div>
   </div>
-    </div>                                                                                    <hr>
+    </div>                                                                                                <hr>
 
     <div id="six">
   <h2>Our Culture</h2>
@@ -455,9 +495,9 @@
 </div>
 
 
-    </div>                                                                                    <hr>
+    </div>                                                                                                <hr>
 
-    <div id ="seven">
+    <div id="seven">
       <h2>About Us</h2>
 
       <div class="row aboutus">
@@ -482,7 +522,7 @@
       </div>
       </div>
 
-    </div>                                                                                    <hr>
+    </div>                                                                                                <hr>
 
     <div id="eight">
       <h2 class="contact-title">Contact Us</h2>
@@ -493,19 +533,19 @@
         <!-- Contact Form -->
         <div class="col-md-5">
           <form id="contactForm">
-            <div class="mb-3">
+            <div class="mb-3 text-start">
               <label for="name" class="form-label">Your Name</label>
               <input type="text" class="form-control" id="name" required />
             </div>
-            <div class="mb-3">
+            <div class="mb-3 text-start">
               <label for="email" class="form-label">Email Address</label>
               <input type="email" class="form-control" id="email" required />
             </div>
-            <div class="mb-3">
+            <div class="mb-3 text-start">
               <label for="subject" class="form-label">Subject</label>
               <input type="text" class="form-control" id="subject" />
             </div>
-            <div class="mb-3">
+            <div class="mb-3 text-start">
               <label for="message" class="form-label">Message</label>
               <textarea class="form-control" id="message" rows="5" required></textarea>
             </div>
@@ -517,14 +557,13 @@
         <div class="col-md-7">
           <div class="contact-info">
             <h3>Our Address</h3>
-            <p>Hussain Sagar, <br> Khairtabad, Hydrabad, <br> Telangana. 500003</p>
+            <p>Hussain Sagar, <br> Khairtabad, Hyderabad, <br> Telangana. 500003</p>
 
             <h3>Phone</h3>
             <p><a href="tel:+919876543210" class="call-link" style="text-decoration: none; color: white;">📞 +91 98765 43210</a></p>
 
             <h3>Email</h3>
-            <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=akshanmathi@gmail.com&su=Inquiry&body=Hello,
-        %20I%20need%20more%20information." target="_blank" style="text-decoration: none; color: white;"> sizzloom@gmail.com </a></p>
+            <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=akshanmathi@gmail.com&su=Inquiry&body=Hello,%20I%20need%20more%20information." target="_blank" style="text-decoration: none; color: white;"> sizzloom@gmail.com </a></p>
 
             <h3>Opening Hours</h3>
             <p>Mon- Sat: 7am - 10pm <br> Sat - Sun: 8am - 9pm</p>
@@ -552,36 +591,38 @@
       </div>
     </div>
   </section>
-    </div>                                                                                     
+    </div>                                                                                                   
 
     <footer class="footer"> 
 
       <div class="foot-link">
         <a href="https://x.com/" target="_blank">
-          <i style="font-size:24px" class="fab">&#xf099;</i>
+          <i style="font-size:24px" class="fab fa-x-twitter">&#xf099;</i>
         </a>
         <a href="https://www.instagram.com/" target="_blank">
-          <i style="font-size:24px" class="fab">&#xf16d;</i>
+          <i style="font-size:24px" class="fab fa-instagram">&#xf16d;</i>
         </a>
         <a href="https://www.linkedin.com/" target="_blank">
-          <i style="font-size:24px" class="fab">&#xf08c;</i>
+          <i style="font-size:24px" class="fab fa-linkedin">&#xf08c;</i>
         </a>
         <a href="./Restaurant.html">
-          <i style='font-size:24px' class='fas'>&#xf57d;</i>
+          <i style='font-size:24px' class='fas fa-utensils'>&#xf57d;</i>
         </a>
       </div>
 
       <div class="foot-title">
-      <li class="nav-item"><a class="nav-link" href="#seven">About Us</a></li>
-      <li class="nav-item"><a class="nav-link" href="#eight">Contact Us</a></li>
+        <ul class="d-inline-flex list-unstyled m-0 p-0">
+          <li class="nav-item"><a class="nav-link text-white" href="#seven">About Us</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#eight">Contact Us</a></li>
+        </ul>
       </div>
 
-      <div class="foot-btn btn-group">
+      <div class="foot-btn btn-group ms-auto">
         <a href="./sign.html"><button type="button" class="btn btn1">Sign in</button></a>
         <a href="./sign.html"><button type="button" class="btn btn2">Sign up</button></a>
       </div>
 
-    </footer>                                                                                 
+    </footer>                                                                                             
 
     <script src="script.js"></script>
 
